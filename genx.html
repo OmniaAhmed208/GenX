@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/genx.css">
+    <!-- animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -72,11 +78,98 @@
 
       <!-- ================ slider =================== -->
 
+      <div class="slider">
+        <div id="image-slider" class="carousel slide" data-bs-ride="true">
+            <!-- <div class="carousel-indicators flex-column">
+              <button type="button" data-bs-target="#image-slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#image-slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#image-slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div> -->
+            <div class="carousel-inner">
+              <div class="carousel-item active ">
+                <img src="./genx-img/11111111.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item ">
+                <img src="./genx-img/cover genx.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item ">
+                <img src="./genx-img/genx-1.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#image-slider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#image-slider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
+      
+      <!-- ================ services ================ -->
+
+      <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade-down" data-aos-duration="700">
+                        <img src="imgs/hand.jpg" class="img-fluid position-relative" alt="">
+                        <div class="text position-absolute">
+                            <p>Clients also viewed</p>
+                            <h2 class="h1">Services</h2>
+                            <a href="">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade-down" data-aos-duration="700">
+                        <img src="imgs/hand.jpg" class="img-fluid position-relative" alt="">
+                        <div class="text position-absolute">
+                            <p>Clients also viewed</p>
+                            <h2 class="h1">Products</h2>
+                            <a href="">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade-down" data-aos-duration="700">
+                        <img src="imgs/hand.jpg" class="img-fluid position-relative" alt="">
+                        <div class="text position-absolute">
+                            <p>Clients also viewed</p>
+                            <h2 class="h1">Our Offers</h2>
+                            <a href="">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- =============== Company Clients =============-->
+      <div class="company-clients">
+        
+      </div>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="js/genx.js"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <!-- animate -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+        $( function(){
     
+        var windowHieight = $(window).height(),
+        navigationHeight = $('.navbar').innerHeight();
+
+        $('.slider,.carousel-item,.carousel-item img').height(windowHieight - navigationHeight);
+        });
+    </script>
 </body>
 </html>

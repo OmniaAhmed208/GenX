@@ -6,7 +6,13 @@
     --orange-color2: #fb5875;
     --blue: #0f207f;
 }
-body{height: 3000px;}
+body{
+    height: 3000px;
+    font-family: 'Bangers', cursive;
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Roboto', sans-serif;
+}
 
 .navbar {padding: 0 15px;height: 70px;}
 .navbar .navbar-brand{padding-top: 10px;}
@@ -19,8 +25,44 @@ body{height: 3000px;}
 .navbar .navbar-toggler:focus {box-shadow: none;}
 .navbar .navbar-toggler[aria-expanded="true"] {color: #fb5875;border-color: #fb5875;}
 
+/* slider */
+.slider{background-color: black;height: 100vh;}
+.carousel-item{
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.carousel-item img{height: 100%;}
+
+/* services */
+.services{margin-top: -40px;}
+.services .card{overflow: hidden;box-shadow: 0px 0 13px #7b7b7b;height: 300px;}
+.services .card .text{bottom: 35px;left: 25px;}
+.services .card .text h2{
+    /*color: #626ff9;*/
+    margin: -12px 0 15px 0;
+    font-size: 28px;
+}
+.services .card .text a{
+    padding: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    /* font-weight: bold; */
+    border-radius: 4px;
+    background: linear-gradient(45deg,#fc904f,#fb5875);
+    /* background: linear-gradient(45deg,#23f2fe,#626ff9); */
+}
+.services .card .text a svg{margin-left: 6px;}
+
+/* =============== company-clients ================ */
+
+
 /*============= media =============*/
 
 @media (max-width:991px) {
     .navbar .navbar-brand{padding-top: 0;}
+    .services{margin-top: 20px;}
 }
