@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap'); /*Oswald*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap'); /*roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap'); /*cairo*/
 :root{
     --grey-color:#5a5d60;
     --blue-color1: #23f2fe;
@@ -9,9 +10,8 @@
     --blue: #0f207f;
 }
 body{
-    /* font-family: 'Cairo', sans-serif;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Roboto', sans-serif; */
+    position: relative;
+    overflow-x: hidden;
 }
 h1,h2{font-family: 'Oswald', sans-serif;}
 p{font-family: 'Cairo', sans-serif;}
@@ -26,6 +26,7 @@ p{font-family: 'Cairo', sans-serif;}
 .navbar .navbar-toggler {color: #626ff9;font-size: 25px;border-color: #626ff9;}
 .navbar .navbar-toggler:focus {box-shadow: none;}
 .navbar .navbar-toggler[aria-expanded="true"] {color: #fb5875;border-color: #fb5875;}
+.navbar .dropdown-menu {margin-right: 15px;}
 
 /* =============== slider ===============*/
 .slider{background-color: black;height: 100vh;}
@@ -48,12 +49,10 @@ p{font-family: 'Cairo', sans-serif;}
 }
 .services .card .text{bottom: 35px;left: 25px;}
 .services .card .text h2{
-    /*color: #626ff9;*/
     margin: -12px 0 15px 0;
     font-size: 28px;
     font-weight: 600;
 }
-/* .services .card .text a */
 .main-btn{
     padding: 12px;
     text-decoration: none;
@@ -63,7 +62,6 @@ p{font-family: 'Cairo', sans-serif;}
     border-radius: 4px;
     background: linear-gradient(45deg,#fc904f,#fb5875);
 }
-/* .services .card .text a svg{margin-left: 6px;} */
 .main-btn svg{margin-left: 6px;}
 
 /* =========== about ================= */
@@ -72,14 +70,14 @@ p{font-family: 'Cairo', sans-serif;}
     background-position: center top;
     background-size: contain;
     padding-top: 20px;  
+    overflow-x: hidden;
 }
 .about-company .row{margin-right: 0;}
 .about-company .about p{width: 95%;}
 .about-company .about h1{font-weight: bold;}
 .about h1{color: #fb5875;}
-/* .about :nth-child(3){max-width: 80%;} */
 .about-company .imgBox{height: 100%;display: flex;align-items: center;}
-/* .about-company .imgBox img{clip-path: polygon(88% 0%, 50% 100% , 0% 50%);} */
+
 /* =============== company-clients ================ */
 
 .company-clients{
@@ -88,7 +86,6 @@ p{font-family: 'Cairo', sans-serif;}
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* background: linear-gradient(45deg, #23f2fe, #626ff9); */
     position: relative;
     padding-top: 11em;
     padding-bottom: 6em;
@@ -97,27 +94,8 @@ p{font-family: 'Cairo', sans-serif;}
 .company-clients .bg-top{position: absolute;top: 0;right: 0;left: 0;}
 .company-clients .bg-bottom{position: absolute;bottom: 0;right: 0;left: 0;}
 .company-clients .content-top{margin-top: -90px;padding: 0 20px}
-.company-clients .content-top span{
-    color: #fff;
-    position: relative;
-    /* left: 60px; */
-    font-size: 14px;
-}
-/* .company-clients .content-top span::before{
-    content: "";
-    position: absolute;
-    width: 42px;
-    height: 2px;
-    left: -48px;
-    background-color: #fb5875;
-    top: 10px;
-} */
-.company-clients .content-top h2{
-    font-weight: 900;
-    /* margin: 0 60px 0; */
-    color: #fff;
-    letter-spacing: .06rem;
-}
+.company-clients .content-top span{color: #fff;position: relative;font-size: 14px;}
+.company-clients .content-top h2{font-weight: 900;color: #fff;letter-spacing: .06rem;}
 .company-clients .content{margin: auto;margin-top: 50px;}
 .company-clients .content ul{display: flex;width: 100%;justify-content: center;margin-top: 60px;}
 .company-clients .content ul li{color: #fff;background: #000;padding: 30px;margin-right: 10px;}
@@ -150,8 +128,6 @@ p{font-family: 'Cairo', sans-serif;}
     position: absolute;
     z-index: 999;
 }
-/* .company-clients .content .slid .prev-arrow{left: 45%;bottom: -50px;} */
-/* .company-clients .content .slid .next-arrow{right: 45%;bottom: -50px;} */
 .company-clients .content .slid .prev-arrow{left: 2%;bottom: 70px;}
 .company-clients .content .slid .next-arrow{right: 2%;bottom: 70px;}
 
@@ -210,7 +186,6 @@ p{font-family: 'Cairo', sans-serif;}
     padding-top: 0;
 }
 .working-steps .title h2{font-size: 35px;font-weight: bold;color: #215876;}
-/* .working-steps .box{margin-bottom: 70px;} */
 .working-steps .box img{height: 50px;}
 .working-steps .box p{
     font-size: 15px;
@@ -231,19 +206,7 @@ p{font-family: 'Cairo', sans-serif;}
     position: relative;
     margin: 0 15px;
 }
-.contact h2{
-    /* position: relative; */
-    font-size: 35px;font-weight: bold;color: #fff;
-}
-/* .contact h2::before{
-    content: "";
-    position: absolute;
-    width: 42px;
-    height: 2px;
-    left: -50px;
-    background-color: #fb5875;
-    top: 21px;
-} */
+.contact h2{font-size: 35px;font-weight: bold;color: #fff;}
 .contact p{font-weight: bold;color: #ff5a61;width: 80%;}
 .contact .main-btn{display: inline-block;margin-top: 20px;}
 
@@ -258,7 +221,31 @@ p{font-family: 'Cairo', sans-serif;}
 .our-services .title{margin-bottom: 20px;}
 .our-services .title p{margin: 0;font-size: 14px;}
 .our-services .title h2{font-size: 35px;font-weight: bold;color: #215876;}
-.our-services .service{margin-bottom: 20px;}
+.our-services .service{
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-services .service::before{
+    content: attr(data-service);
+    position: absolute;
+    background: linear-gradient(45deg,#23f3fea8,#626ff9a1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 1.7rem;
+    font-family: 'Oswald', sans-serif;
+    transform: translateX(-100%);
+}
+.our-services .service:hover::before{
+    transform: translateX(0);
+}
 
 /* ====================== blogs ======================== */
 .blogs{
@@ -267,26 +254,12 @@ p{font-family: 'Cairo', sans-serif;}
     background-size: contain;
     padding-bottom: 4em;
     padding-top: 70px; 
+    overflow-x: hidden;
 }
 .blogs .title p{width: 95%;}
 .blogs .row{margin-right: 0;}
-/* .blogs  .row div:nth-child(2){padding: 0;} */
 .blogs .blog{margin-left: 60px;}
-/* .blogs .title{position: relative;} */
-/* .blogs .title p:nth-child(1)::before{
-    content: "";
-    position: absolute;
-    width: 42px;
-    height: 2px;
-    left: -50px;
-    background-color: #fb5875;
-    top: 10px;
-} */
-.blogs .title p:nth-child(2){
-    color: #ff5a61;
-    font-weight: bold;
-    font-size: 20px;
-}
+.blogs .title p:nth-child(2){color: #ff5a61;font-weight: bold;font-size: 20px;}
 .blogs .box p{
     font-weight: bold;
     font-size: 20px;
@@ -336,4 +309,40 @@ p{font-family: 'Cairo', sans-serif;}
     align-items: center;
     height: 100%;
     font-size: 14px;
+}
+
+
+/* ==================== .loaging =============== */
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-42deg,#1316d4,#2763a0);
+    box-shadow: inset 285px 146px 120px rgb(15 32 127 / 77%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.loading img{
+    width: 300px;
+    filter: drop-shadow(2px 4px 6px black);
+    animation: loading 5s infinite ease-in-out;
+}
+@keyframes loading {
+    0%{
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: scale(1.5);
+        width: 400px;
+        transform: rotate(360deg);
+    }
+    50%{
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
 }

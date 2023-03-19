@@ -1,8 +1,10 @@
-/*===================== media ==================*/
 
+/*===================== media ==================*/
+@media (min-width:991px) {
+    .navbar .dropdown-menu {margin: 0 0 0 -67px;}
+}
 @media (max-width:991px) {
     .navbar .navbar-brand{padding-top: 0;}
-    /* .services{margin-top: 20px;} */
     .services .card{margin-bottom: 20px;}
     .about-company {padding-top: 0;}
     .about-company .imgBox{display:none}
@@ -49,6 +51,7 @@
 }
 
 @media (max-width:280px) {
+    .navbar .navbar-collapse {margin-top: 7px}
     .navbar .navbar-brand img {width: 100px;}
     .navbar .navbar-brand {padding-top: 15px;}
     .company-clients .content .slid .imgBox {width: 60px;height: 60px;}
@@ -74,4 +77,25 @@
     .blogs{padding-bottom: 40px;}
     .blogs .blogs-btn {padding: 5px 20px;}
     .footer .copy-right .conditions ul{display: block;}
+
+    .loading img{
+        width: 150px;
+        filter: drop-shadow(2px 4px 6px black);
+        animation: loading2 5s infinite ease-in-out;
+    }
+    @keyframes loading2 {
+        0%{
+            transform: scale(1);
+            transform: rotate(0deg);
+        }
+        25%{
+            transform: scale(1.5);
+            width: 200px;
+            transform: rotate(360deg);
+        }
+        50%{
+            transform: scale(1);
+            transform: rotate(0deg);
+        }
+    }
 }
