@@ -260,6 +260,7 @@ p{font-family: 'Cairo', sans-serif;}
 .blogs .row{margin-right: 0;}
 .blogs .blog{margin-left: 60px;}
 .blogs .title p:nth-child(2){color: #ff5a61;font-weight: bold;font-size: 20px;}
+.blogs .box{cursor: pointer;transition: all 0.3s ease-in-out;}
 .blogs .box p{
     font-weight: bold;
     font-size: 20px;
@@ -268,6 +269,8 @@ p{font-family: 'Cairo', sans-serif;}
 .blogs .box-img img{height: 200px;}
 .blogs .blogs-btn{background: #215876;border-color: transparent;padding: 12px 20px;}
 
+.blogs .box:hover{transform: translateY(-10px);}
+.blogs .box:hover p{color: #ff5a61;}
 /* ============ footer =============== */
 .footer{
     background: #215876;
