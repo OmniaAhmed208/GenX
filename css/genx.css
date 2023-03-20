@@ -19,7 +19,7 @@ p{font-family: 'Cairo', sans-serif;}
 .navbar {padding: 0 15px;height: 70px;}
 .navbar .navbar-brand{padding-top: 10px;}
 .navbar .navbar-brand img {width: 150px;}
-.navbar ul li{padding-left: 15px;}
+.navbar ul .nav-item{padding-left: 15px;}
 .navbar ul li a{color: #000;font-weight: bold;}
 .navbar ul li a:hover{color: #fb5875;}
 .navbar ul li .active:hover{color: #fb5875;}
@@ -27,6 +27,8 @@ p{font-family: 'Cairo', sans-serif;}
 .navbar .navbar-toggler:focus {box-shadow: none;}
 .navbar .navbar-toggler[aria-expanded="true"] {color: #fb5875;border-color: #fb5875;}
 .navbar .dropdown-menu {margin-right: 15px;}
+.navbar .nav-item .active{color: #ff5a61;}
+.navbar .setting .dropdown-toggle::after{margin-left: 0;border-top:0}
 
 /* =============== slider ===============*/
 .slider{background-color: black;height: 100vh;}
@@ -96,7 +98,7 @@ p{font-family: 'Cairo', sans-serif;}
 .company-clients .content-top{margin-top: -90px;padding: 0 20px}
 .company-clients .content-top span{color: #fff;position: relative;font-size: 14px;}
 .company-clients .content-top h2{font-weight: 900;color: #fff;letter-spacing: .06rem;}
-.company-clients .content{margin: auto;margin-top: 50px;}
+.company-clients .content{margin: auto;margin-top: 50px;padding: 0 100px}
 .company-clients .content ul{display: flex;width: 100%;justify-content: center;margin-top: 60px;}
 .company-clients .content ul li{color: #fff;background: #000;padding: 30px;margin-right: 10px;}
 .company-clients .content .slid{position: relative;}
@@ -275,7 +277,7 @@ p{font-family: 'Cairo', sans-serif;}
 /* ============ footer =============== */
 .footer{
     background: #215876;
-    padding: 30px 0 0 0;
+    padding: 40px 0 20px 0;
     color: #fff;
 }
 .footer h2{
@@ -314,7 +316,7 @@ p{font-family: 'Cairo', sans-serif;}
     height: 100%;
     font-size: 14px;
 }
-
+.footer .celebrities p{font-size: 13px;}
 
 /* ==================== .loaging =============== */
 .loading{

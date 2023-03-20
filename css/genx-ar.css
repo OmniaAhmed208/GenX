@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap');
+
+body{
+    direction:rtl;
+}
+
+h1,h2{font-family: 'IBM Plex Sans Arabic', sans-serif;}
+p{font-family: 'Cairo', sans-serif;}
+
+.main-btn svg {margin-right: 6px;}
+
+.navbar .dropdown-menu {margin-right: 15px;}
+.navbar .setting .dropdown-toggle::after{margin-left: 0;border-top:0}
+.navbar .dropdown-menu li{text-align: right;}
+
+/* ============= services ================*/
+.services .card .text {bottom: 35px;right: 25px;left: 0;}
+.services .card .text h2 {margin: -12px 0 24px 0;font-size: 35px;}
+
+/* =============== company-clients ================ */
+.company-clients .content-top {margin-top: 0px;padding: 0 38px;}
+.company-clients .content .slid{direction:ltr !important;}
+
+/* ============== working steps =================== */
+.working-steps .box p {padding: 10px 17px 0 0;}
+
+/* ================= contact ============== */
+.contact h2 {font-size: 24px;}
+.contact p {width: 100%;font-size: 36px !important;}
+
+/* =============== footer =================== */
+.footer .footer-services ul{padding-right: 0;}
+.footer .copy-right .conditions li {padding-right: 15px;}
