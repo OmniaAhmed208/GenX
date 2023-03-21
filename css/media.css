@@ -9,6 +9,8 @@
     .about-company {padding-top: 0;}
     .about-company .imgBox{display:none}
     .blogs .imgBox{display:none}
+    .footer .copy-right .conditions {justify-content: center;}
+    .footer .copy-right .conditions ul{display: block;}
 }
 @media (max-width:600px){
 
@@ -43,6 +45,7 @@
     .blogs{padding-top: 30px;}
     .blogs .blog {margin-left: 0;}
     .footer .rights {justify-content: flex-start;}
+    .footer .copy-right .conditions {justify-content: flex-start;}
 }
 @media (max-width:400px){
     .about-company .about p{width: 100%;}
@@ -76,8 +79,7 @@
     .our-services .title h2 {font-size: 30px;}
     .blogs{padding-bottom: 40px;}
     .blogs .blogs-btn {padding: 5px 20px;}
-    .footer .copy-right .conditions ul{display: block;}
-
+    
     .loading img{
         width: 150px;
         filter: drop-shadow(2px 4px 6px black);

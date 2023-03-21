@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap'); /*Oswald*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap'); /*roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap'); /*cairo*/
+:root{
+    --grey-color:#5a5d60;
+    --blue-color1: #23f2fe;
+    --blue-color2: #626ff9;
+    --orange-color1: #fc904f;
+    --orange-color2: #fb5875;
+    --blue: #0f207f;
+}
+body{
+    position: relative;
+    overflow-x: hidden;
+}
+h1,h2{font-family: 'Oswald', sans-serif;}
+p{font-family: 'Cairo', sans-serif;}
+
+.navbar {padding: 0 15px;height: 70px;}
+.navbar .navbar-brand{padding-top: 10px;}
+.navbar .navbar-brand img {width: 150px;}
+.navbar ul .nav-item{padding-left: 15px;}
+.navbar ul li a{color: #000;font-weight: bold;}
+.navbar ul li a:hover{color: #fb5875;}
+.navbar ul li .active:hover{color: #fb5875;}
+.navbar .navbar-toggler {color: #626ff9;font-size: 25px;border-color: #626ff9;}
+.navbar .navbar-toggler:focus {box-shadow: none;}
+.navbar .navbar-toggler[aria-expanded="true"] {color: #fb5875;border-color: #fb5875;}
+.navbar .dropdown-menu {margin-right: 15px;}
+.navbar .dropdown-menu li a{font-size: 12px;}
+.navbar .nav-item .active{color: #ff5a61;}
+.navbar .setting .dropdown-toggle::after{margin-left: 0;border-top:0}
+
+/* ============ footer =============== */
+.footer{
+    background: #215876;
+    padding: 40px 0 0 0;
+    color: #fff;
+}
+.footer h2{
+    color: #ff5a61;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.footer svg{color: #ff5a61;padding-left: 14px;}
+.footer a{text-decoration: none;color: #fff;padding-left:10px;transition: all 0.3s ease-in-out;}
+.footer a:hover{color: #ff5a61;}
+.footer .addresses{font-size: 14px;}
+.footer .footer-services ul li{padding-bottom: 10px;font-size: 14px;}
+
+.footer .copy-right{background-color: #fb5875;padding: 14px 0 0 0;}
+.footer .copy-right ul{display: flex;}
+.footer .copy-right ul li a{padding: 0;}
+.footer .copy-right ul li a svg{padding: 0;}
+.footer .copy-right .icons ul li{
+    background: #fff;
+    margin-right: 10px;
+    border-radius: 50%;
+    padding: 6px 10px;
+    transition: all .4s ease-in-out;
+}
+.footer .copy-right .icons li:hover{background-color: transparent;color: #fff;}
+.footer .copy-right .icons li:hover svg{color: #fff;}
+
+.footer .copy-right .conditions {display: flex;align-items: center;height: 100%;}
+.footer .copy-right .conditions li{font-size: 12px;padding-right: 30px;}
+.footer .copy-right .conditions li a:hover{color:#fff}
+.footer .rights {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+}
+.footer .celebrities p{font-size: 13px;}
+
+/* ============== media ================== */
+
+
+/*===================== media ==================*/
+@media (min-width:991px) {
+    .navbar .dropdown-menu {margin: 0 0 0 -80px;}
+}
+@media (max-width:991px) {
+    .navbar .navbar-brand{padding-top: 0;}
+    .footer .copy-right .conditions {justify-content: center;}
+    .footer .copy-right .conditions ul{display: block;}
+}
+@media (max-width:600px){
+    .footer .rights {justify-content: flex-start;}
+    .footer .copy-right .conditions {justify-content: flex-start;}
+}
+
+@media (max-width:280px) {
+    .navbar .navbar-collapse {margin-top: 7px}
+    .navbar .navbar-brand img {width: 100px;}
+    .navbar .navbar-brand {padding-top: 15px;}
+}

@@ -27,6 +27,7 @@ p{font-family: 'Cairo', sans-serif;}
 .navbar .navbar-toggler:focus {box-shadow: none;}
 .navbar .navbar-toggler[aria-expanded="true"] {color: #fb5875;border-color: #fb5875;}
 .navbar .dropdown-menu {margin-right: 15px;}
+.navbar .dropdown-menu li a{font-size: 12px;}
 .navbar .nav-item .active{color: #ff5a61;}
 .navbar .setting .dropdown-toggle::after{margin-left: 0;border-top:0}
 
@@ -274,10 +275,11 @@ p{font-family: 'Cairo', sans-serif;}
 
 .blogs .box:hover{transform: translateY(-10px);}
 .blogs .box:hover p{color: #ff5a61;}
+
 /* ============ footer =============== */
 .footer{
     background: #215876;
-    padding: 40px 0 20px 0;
+    padding: 40px 0 0 0;
     color: #fff;
 }
 .footer h2{

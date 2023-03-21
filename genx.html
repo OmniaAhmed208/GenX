@@ -21,7 +21,7 @@
 
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="genx.html">
             <img src="imgs/genxpng.png" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,55 +30,69 @@
           <div class="collapse navbar-collapse bg-light" id="main">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="genx.html">Home</a>
                 </li>
                 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="service" href="html-en/services.html">
                         Services
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu" id="services">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="html-en/services.html" id="web-design">Web Design Services</a>
+                            <ul class="dropdown-menu" id="web-design-list">
+                                <li><a href="" class="dropdown-item">Web Design</a></li>
+                                <li><a href="" class="dropdown-item">Domain Hosting</a></li>
+                                <li><a href="" class="dropdown-item">Online Store Design</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="html-en/android-service.html" id="android">Design Android and IOS applications for iPhone</a>
+                            <ul class="dropdown-menu" id="android-app">
+                                <li><a href="" class="dropdown-item">Mobile App Design</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="html-en/customized-app.html" id="signature">Customized services and applications</a>
+                            <ul class="dropdown-menu" id="signList">
+                                <li><a href="" class="dropdown-item">Signature</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Signature</a>
+                    <a class="nav-link" href="html-en/signature.html">Signature</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="html-en/blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Clients</a>
+                    <a class="nav-link" href="html-en/clients.html">Clients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Offers</a>
+                    <a class="nav-link" href="html-en/offers.html">Offers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link" href="html-en/contact.html">Contact Us</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="about">
                         About Us
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu" id="aboutUs">
+                        <li><a class="dropdown-item" href="html-en/jobs.html">Jobs</a></li>
+                        <li><a class="dropdown-item" href="html-en/map.html">Site Map</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown setting">
+                <!-- <li class="nav-item dropdown setting">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-gear"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="genx-ar.html">Arabic Language</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
           </div>
         </div>
@@ -438,7 +452,7 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="addresses">
                             <h2>Company Addresses</h2>
                             <p>
@@ -457,7 +471,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="footer-services">
                             <h2>Services</h2>
                             <ul class="list-unstyled">
@@ -488,7 +502,7 @@
             <div class="copy-right">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 d-flex align-items-center">
                             <div class="icons">
                                 <ul class="list-unstyled">
                                     <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
