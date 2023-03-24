@@ -1,0 +1,107 @@
+.road{background: #e9e9e9;padding: 7px 0;height: 40px;}
+.road .active{color: #fb5875;font-weight: bold;}
+.road svg{padding: 0 5px;}
+.road p{font-size: 14px;}
+.road a{all: unset;cursor: pointer;}
+
+.intro,.online-store,.challenges,.advantages,.store-signs,.register{padding: 50px 0;}
+h2{color: #00607e;font-size: 27px;}
+.h1{color: #fb5875;}
+p{font-weight: bold;}
+.contact-btn a{
+    margin: 0px 20px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    border: transparent;
+    background: linear-gradient(45deg,#fc904f,#fb5875);
+}
+
+.online-store ul,.advantages ul{padding-top: 20px;}
+.online-store ul li,.advantages ul li{padding: 0 0 10px;font-weight: 600;font-size: 17px;}
+.online-store svg,.advantages svg{color: #fb5875;padding-right: 6px;}
+
+/* ========== intro ============= */
+.intro h1{
+    padding: 0 0 30px;
+    font-weight: bold;
+    color: #fb5875;
+    padding-bottom: 0;
+}
+
+/* ============ online-store , advantages ========= */
+.online-store{padding-top: 0}
+.online-store,.advantages{
+    background-image: url(../imgs/steps.webp);
+    background-position: center top;
+    background-size: contain;
+}
+
+/* ============ challenges =========== */
+.challenges{background: #e9e9e9;}
+.challenges .content img{width: 80px;}
+
+/* ================ needs =================== */
+.needs{
+    padding: 70px 60px;
+    background-image: url(../imgs/company-clients.webp);
+    background-color: #215876;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 15px;
+}
+.needs p{font-weight: bold;width: 95%;color: #fff;}
+.needs .main-btn{
+    padding: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 20px;
+    background: linear-gradient(45deg,#fc904f,#fb5875);
+}
+.needs .main-btn svg{margin-left: 6px;}
+
+/* ======== register ========== */
+.register{
+    background-image: url(../imgs/steps.webp);
+    background-position: center top;
+    background-size: contain;
+}
+.register .h1{color: #fb5875;padding-bottom: 40px;font-weight: bold;}
+.register .btn{
+    background-color: #fb5875;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px 30px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* =========== media ========= */
+@media (max-width:600px) {
+    .online-store img{margin-bottom: 20px;}
+    .contact-btn a{font-size: 16px;}
+    .advantages h2{padding-top: 10px;}
+    .advantages img{margin-bottom: 30px;}
+    .store-signs img{margin-bottom: 20px;}
+    .needs {padding: 35px 30px;}
+    .needs p{font-size: 18px !important;}
+    .needs .main-btn{font-size: 13px;}
+    .register .btn {font-size: 18px;padding: 6px 25px;}
+}
+@media (max-width:280px) {
+    .road p{font-size: 12px;}
+    .online-store h2{font-size: 20px;padding: 0 !important;}
+    .online-store li{font-size: 14px;}
+    .online-store p{font-size: 14px;}
+    .challenges h2{font-size: 20px;}
+    .advantages{padding: 0;}
+    .advantages h2{font-size: 20px;}
+    .advantages p{font-size: 14px;}
+    .advantages li{font-size: 14px !important;}
+}

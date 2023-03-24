@@ -1,0 +1,76 @@
+.road{background: #e9e9e9;padding: 7px 0;height: 40px;}
+.road .active{color: #fb5875;font-weight: bold;}
+.road svg{padding: 0 5px;}
+.road p{font-size: 14px;}
+.road a{all: unset;cursor: pointer;}
+
+.android,.design-app,.program-app,.previous-work,.register{padding: 50px 0;}
+h2{color: #00607e;font-size: 27px;}
+.h1{color: #fb5875;}
+.contact-btn a{
+    margin: 0px 20px 0 0;
+    width: 165px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.program-app ul,.program-app ul{padding-top: 20px;}
+.program-app ul li,.program-app ul li{padding: 0 0 10px;font-weight: 600;font-size: 17px;}
+.program-app svg,.program-app svg{color: #fb5875;padding-right: 6px;}
+
+p{font-weight: bold;font-size: 18px;}
+/* ========== android ========= */
+.android h1{
+    padding: 0 0 30px;
+    font-weight: bold;
+    color: #fb5875;
+}
+.android p span{color: #fb5875;}
+.android li{font-size: 18px;font-weight: bold;}
+.android p{font-size: 16px;}
+
+/* ======== design-app =========== */
+.design-app{padding-top: 0;}
+
+/* =========== program-app ========= */
+.program-app li span{color: #fb5875;}
+.program-app p,.program-app li{font-size: 16px !important;}
+
+/* ========= previous-work =========== */
+.previous-work{padding-top: 0;}
+.previous-work .content .h1{font-size: 27px;color: #dc3545;}
+/* ======== register ========== */
+.register{
+    background-image: url(../imgs/steps.webp);
+    background-position: center top;
+    background-size: contain;
+}
+.register .h1{color: #fb5875;padding-bottom: 40px;font-weight: bold;}
+.register .btn{
+    background-color: #fb5875;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px 30px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* =========== media ======= */
+@media (max-width:600px) {
+    .contact-btn{padding: 25px 0 !important;}
+    .program-app{padding-top: 0;}
+    .program-app h2{padding-bottom: 20px;}
+    .program-app img{margin-bottom: 10px;}
+    .program-app li{font-size: 14px !important;}
+    .previous-work img{padding-bottom: 10px;}
+}
+@media (max-width:280px) {
+    .design-app p{font-size: 14px;}
+    .previous-work .content .h1{font-size: 22px !important;}
+    .previous-work p{font-size: 14px;}
+    .previous-work a{margin-bottom: 8px;width: 150px;font-size: 15px;}
+    .previous-work{padding-bottom: 0;}
+    .previous-work .contact-btn{padding-bottom: 0 !important;}
+    .register .btn {font-size: 18px;padding: 6px 25px;}
+}
