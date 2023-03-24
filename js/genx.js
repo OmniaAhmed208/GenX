@@ -7,8 +7,6 @@ let web_design = document.querySelector('#web-design');
 let web_designList = document.querySelector('#web-design-list');
 let android = document.querySelector('#android');
 let androidList = document.querySelector('#android-app');
-let signature = document.querySelector('#signature');
-let signatureList = document.querySelector('#signList');
 
 // =============== services
 service.onmouseover = function(){
@@ -61,19 +59,6 @@ androidList.onmouseover = function(){
 }
 androidList.onmouseout = function(){
     androidList.classList.remove('show');
-}
-//================ signature 
-signature.onmouseover = function(){
-    signatureList.classList.add('show');
-}
-signature.onmouseout = function(){
-    signatureList.classList.remove('show');
-}
-signatureList.onmouseover = function(){
-    signatureList.classList.add('show');
-}
-signatureList.onmouseout = function(){
-    signatureList.classList.remove('show');
 }
 
 
