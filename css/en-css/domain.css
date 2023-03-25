@@ -51,7 +51,7 @@ h2{color: #00607e;font-size: 22px;font-weight: bold;}
 
 /* ======== register ========== */
 .register{
-    background-image: url(../imgs/steps.webp);
+    background-image: url(../../imgs/steps.webp);
     background-position: center top;
     background-size: contain;
 }

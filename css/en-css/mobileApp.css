@@ -41,7 +41,7 @@ p{font-weight: bold;font-size: 18px;}
 .previous-work .content .h1{font-size: 27px;color: #dc3545;}
 /* ======== register ========== */
 .register{
-    background-image: url(../imgs/steps.webp);
+    background-image: url(../../imgs/steps.webp);
     background-position: center top;
     background-size: contain;
 }

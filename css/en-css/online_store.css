@@ -31,7 +31,7 @@ p{font-weight: bold;}
 /* ============ online-store , advantages ========= */
 .online-store{padding-top: 0}
 .online-store,.advantages{
-    background-image: url(../imgs/steps.webp);
+    background-image: url(../../imgs/steps.webp);
     background-position: center top;
     background-size: contain;
 }
@@ -43,7 +43,7 @@ p{font-weight: bold;}
 /* ================ needs =================== */
 .needs{
     padding: 70px 60px;
-    background-image: url(../imgs/company-clients.webp);
+    background-image: url(../../imgs/company-clients.webp);
     background-color: #215876;
     background-size: cover;
     background-position: center;
@@ -67,7 +67,7 @@ p{font-weight: bold;}
 
 /* ======== register ========== */
 .register{
-    background-image: url(../imgs/steps.webp);
+    background-image: url(../../imgs/steps.webp);
     background-position: center top;
     background-size: contain;
 }
