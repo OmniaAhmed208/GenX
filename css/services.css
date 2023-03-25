@@ -6,10 +6,12 @@
 
 /* =================== service =========  */
 
-.web-design h2, .android h2,.customized-app h2{padding: 40px 0;font-weight: bold;color: #215876;}
+h1,.web-design h2, .android h2,.customized-app h2{padding: 40px 0;font-weight: bold;color: #215876;}
+h1{color: #fb5875;}
 
 .web-design .service,
 .android .service,
+.offers .service,
 .customized-app .service{
     margin-bottom: 20px;
     overflow: hidden;
@@ -19,6 +21,7 @@
 
 .web-design .service::before,
 .android .service::before,
+.offers .service::before,
 .customized-app .service::before{
     content: attr(data-service);
     position: absolute;
@@ -35,9 +38,11 @@
     font-family: 'Oswald', sans-serif;
     transform: translateX(-100%);
 }
+.offers .service::before{font-size: 1.4rem !important;padding: 0 46px !important;}
 
 .web-design .service:hover::before,
 .android .service:hover::before,
+.offers .service:hover::before,
 .customized-app .service:hover::before{
     transform: translateX(0);
 }
