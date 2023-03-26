@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offers</title>
+    <title>Our Clients</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/en-css/services.css">
+    <link rel="stylesheet" href="../css/en-css/clients.css">
     <link rel="stylesheet" href="../css/header_footer.css">
     <!-- animation -->
     <link rel="stylesheet" href="../css/animate.css">
@@ -30,7 +30,7 @@
                 </li>
                 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="service" href="services.html">
+                    <a class="nav-link dropdown-toggle active" id="service" href="services.html">
                         Services
                     </a>
                     <ul class="dropdown-menu" id="services">
@@ -60,7 +60,7 @@
                     <a class="nav-link" href="clients.html">Clients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="offers.html">Offers</a>
+                    <a class="nav-link" href="offers.html">Offers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact Us</a>
@@ -91,21 +91,82 @@
     <!-- =============== road ========== -->
     <div class="road">
         <div class="container pt-1">
-            <p><a href="../genx.html">Home</a> <i class="fa-solid fa-arrow-right-long"></i> <span class="active">Offers</span></p>
+            <p><a href="../genx.html">Home</a> <i class="fa-solid fa-arrow-right-long"></i> <span class="active">Our Clients</span> </p>
         </div>
     </div>
 
-    <!-- =============== Offers ============= -->
-    <div class="offers">
+    <!-- ============= filter =========== -->
+    <div class="clients">
         <div class="container">
-            <h1 class="fw-bold">Offers</h1>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service" data-service="20% Off Accounts Program - Easy Store">
-                        <img src="../imgs/easy-store-request.webp" class="img-fluid" alt="">
+            <h1>Our Clients</h1>
+
+            <div class="row mb-5">
+                <div class="col-md-4 col-lg-6 d-flex m-auto justify-content-center w-100">
+                    <div class="titles d-flex">
+                        <ul class="list-unstyled d-flex">
+                            <li> <a href="#" class="btn btn-outline-primary mx-2 px-4 button" data-filter="all">All</a></li>
+                            <li class="dropdown">
+                                <a href="" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item button" href="#" data-filter="web-design">Web Design</a></li>
+                                    <li><a class="dropdown-item button" href="#" data-filter="mobile-app">Mobile App Design</a></li>
+                                    <li><a class="dropdown-item button" href="#" data-filter="hosting">Web Hosting and Domain Reservation</a></li>
+                                    <li><a class="dropdown-item button" href="#" data-filter="online-store">Online Store Design</a></li>
+                                    <li><a class="dropdown-item button" href="#" data-filter="signature">Signature</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
+            <div class="services mt-5">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 serviceItem web-design" data-item="web design">
+                        <div class="service" data-service="web design">
+                            <div class="imgBox">
+                                <img src="../imgs/service1.webp" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 serviceItem signature">
+                        <div class="service" data-service="Signature">
+                            <div class="imgBox">
+                                <img src="../imgs/service5.webp" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 serviceItem web-design">
+                        <div class="service" data-service="web design">
+                            <div class="imgBox">
+                                <img src="../imgs/service1.webp" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 serviceItem mobile-app">
+                        <div class="service" data-service="Mobile App Design">
+                            <div class="imgBox">
+                                <img src="../imgs/service3.webp" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 serviceItem hosting">
+                        <div class="service" data-service="Web Hosting">
+                            <div class="imgBox">
+                                <img src="../imgs/service2.webp" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 serviceItem online-store">
+                        <div class="service" data-service="Online Store Design">
+                            <div class="imgBox">
+                                <img src="../imgs/service4.webp" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -195,6 +256,8 @@
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="../js/genx.js"></script>
+    <script src="../js/blog-filter.js"></script>
 </body>
 </html>

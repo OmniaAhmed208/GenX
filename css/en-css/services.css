@@ -6,8 +6,8 @@
 
 /* =================== service =========  */
 
-h1,.web-design h2, .android h2,.customized-app h2{padding: 40px 0;font-weight: bold;color: #215876;}
-h1{color: #fb5875;}
+.offers h1,.web-design h2, .android h2,.customized-app h2{padding: 40px 0;font-weight: bold;color: #215876;}
+.offers h1{color: #fb5875;}
 
 .web-design .service,
 .android .service,
