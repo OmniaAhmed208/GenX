@@ -11,18 +11,49 @@
 
 .web-design .service,
 .android .service,
-.offers .service,
-.customized-app .service{
+.customized-app .service
+{
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.web-design .hoverCard,
+.android .hoverCard,
+.customized-app .hoverCard{
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: #000000a8;
+    top: 10px;
+    opacity: 0;
+    transform: perspective(400px) rotateX(-90deg);
+    transform-origin: center top 0;
+    transition: all .5s ease 0s;
+}
+.web-design .hoverCard a,
+.android .hoverCard a,
+.customized-app .hoverCard a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.web-design .service:hover .hoverCard,
+.android .service:hover .hoverCard,
+.customized-app .service:hover .hoverCard{opacity: 1;transform: perspective(100px) rotateX(0);}
+
+
+.offers .service{
     margin-bottom: 20px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
 }
 
-.web-design .service::before,
-.android .service::before,
-.offers .service::before,
-.customized-app .service::before{
+.offers .service::before{
     content: attr(data-service);
     position: absolute;
     background: linear-gradient(45deg,#23f3fea8,#626ff9a1);
@@ -38,11 +69,9 @@
     font-family: 'Oswald', sans-serif;
     transform: translateX(-100%);
 }
+
 .offers .service::before{font-size: 1.4rem !important;padding: 0 46px !important;}
 
-.web-design .service:hover::before,
-.android .service:hover::before,
-.offers .service:hover::before,
-.customized-app .service:hover::before{
+.offers .service:hover::before{
     transform: translateX(0);
 }

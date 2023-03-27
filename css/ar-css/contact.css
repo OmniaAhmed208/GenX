@@ -1,0 +1,63 @@
+.road{background: #e9e9e9;padding: 7px 0;height: 40px;}
+.road .active{color: #fb5875;font-weight: bold;}
+.road svg{padding: 0 5px;}
+.road p{font-size: 14px;}
+.road a{all: unset;cursor: pointer;}
+
+.contact,.register{padding: 50px 0;}
+h2{color: #00607e;font-size: 27px;}
+.h1{color: #fb5875;}
+.contact-btn a{
+    margin: 0px 20px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    border: transparent;
+    background: linear-gradient(45deg,#fc904f,#fb5875);
+}
+
+/* ========= contact ======== */
+.contact{
+    background-image: url(../imgs/steps.webp);
+    background-position: center top;
+    background-size: contain;
+}
+.contact h1{
+    padding: 0 0 30px;
+    font-weight: bold;
+    color: #fb5875;
+    padding-bottom: 0;
+}
+.contact .content a{color: #000;text-decoration: none;}
+.contact .content img{width: 45px;}
+
+/* =========== distributors ============ */
+.distributors{background-color: #e9e9e9;margin: 0 15px;}
+.distributors ul li svg{color: #fb5875;}
+
+/* ======== register ========== */
+.register{
+    background-image: url(../../imgs/steps.webp);
+    background-position: center top;
+    background-size: contain;
+}
+.register .h1{color: #fb5875;padding-bottom: 40px;font-weight: bold;}
+.register .btn{
+    background-color: #fb5875;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px 30px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* =========== media ========= */
+@media (max-width:600px) {
+    .distributors h2{font-size: 22px !important;}
+    .register .btn {font-size: 18px;padding: 6px 25px;}
+}
+
+@media (max-width:280px) {
+    .distributors ul li{font-size: 14px !important;}
+    .register .btn {font-size: 18px;padding: 6px 25px;}
+}

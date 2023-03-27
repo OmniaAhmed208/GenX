@@ -1,4 +1,4 @@
- v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -23,67 +23,74 @@
 
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img src="imgs/genxpng.png" alt="">
-            </a>
-          
-            <div class="collapse navbar-collapse bg-light justify-content-end" id="main">
-                <ul class="navbar-nav mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            الخدمات
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">توقيعنا</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">المدونة</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">عملائنا</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">العروض</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">تواصل معنا</a>
-                    </li>
+          <a class="navbar-brand" href="genx.html">
+            <img src="imgs/genxpng.png" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse bg-light justify-content-end" id="main">
+            <ul class="navbar-nav mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="genx.html">الرئيسية</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="service" href="html-ar/services.html">
+                        الخدمات
+                    </a>
+                    <ul class="dropdown-menu" id="services">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="html-ar/services.html" id="web-design">خدمة تصميم المواقع</a>
+                            <ul class="dropdown-menu" id="web-design-list">
+                                <li><a href="html-ar/web_design.html" class="dropdown-item">خدمة تصميم المواقع</a></li>
+                                <li><a href="html-ar/domain.html" class="dropdown-item">استضافة المواقع وحجز الدومينات</a></li>
+                                <li><a href="html-ar/online_store.html" class="dropdown-item">تصميم متجر الكتروني</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="html-ar/android-service.html" id="android">تصميم تطبيقات الandroid والIOS للايفون</a>
+                            <ul class="dropdown-menu" id="android-app">
+                                <li><a href="html-ar/mobileApp.html" class="dropdown-item">تصميم تطبيقات الجوال</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="html-ar/signature.html">توقيعنا</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="html-ar/blog.html">المدونة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="html-ar/clients.html">عملائنا</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="html-ar/offers.html">العروض</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="html-ar/contact.html">تواصل معنا</a>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           عن الشركة
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown setting">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-gear"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="genx.html">English Language</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="about">
+                        عن الشركة
+                    </a>
+                    <ul class="dropdown-menu" id="aboutUs">
+                        <li><a class="dropdown-item" href="html-ar/jobs.html">الوظائف</a></li>
+                        <li><a class="dropdown-item" href="html-ar/map.html">خريطة الموقع</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown setting">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="genx.html">English Language</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
         </div>
       </nav>
 
@@ -461,12 +468,11 @@
                         <div class="footer-services">
                             <h2>الخدمات</h2>
                             <ul class="list-unstyled">
-                                <li><i class="fa-solid fa-caret-left"></i><a href="">تصميم المواقع</a></li>
-                                <li><i class="fa-solid fa-caret-left"></i><a href="">استضافة المواقع وحجز الدومينات</a></li>
-                                <li><i class="fa-solid fa-caret-left"></i><a href="">تصميم تطبيقات الجوال</a></li>
-                                <li><i class="fa-solid fa-caret-left"></i><a href="">Mobile App Design</a></li>
-                                <li><i class="fa-solid fa-caret-left"></i><a href="">تصميم متجر الكتروني</a></li>
-                                <li><i class="fa-solid fa-caret-left"></i><a href="">توقيعي</a></li>
+                                <li><i class="fa-solid fa-caret-left"></i><a href="html-ar/web_design.html">تصميم المواقع</a></li>
+                                <li><i class="fa-solid fa-caret-left"></i><a href="html-ar/domain.html">استضافة المواقع وحجز الدومينات</a></li>
+                                <li><i class="fa-solid fa-caret-left"></i><a href="html-ar/mobileApp.html">تصميم تطبيقات الجوال</a></li>
+                                <li><i class="fa-solid fa-caret-left"></i><a href="html-ar/online_store.html">تصميم متجر الكتروني</a></li>
+                                <li><i class="fa-solid fa-caret-left"></i><a href="html-ar/signature.html">توقيعي</a></li>
                             </ul>
                         </div>
                     </div>

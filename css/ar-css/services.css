@@ -1,0 +1,18 @@
+body{
+    direction:rtl;
+}
+
+h1,h2{font-family: 'IBM Plex Sans Arabic', sans-serif;}
+p{font-family: 'Cairo', sans-serif;}
+
+.main-btn svg {margin-right: 6px;}
+
+.navbar .dropdown-menu {margin-right: 15px;}
+.navbar .setting .dropdown-toggle::after{margin-left: 0;border-top:0}
+.navbar .dropdown-menu li{text-align: right;}
+
+/* =============== footer =================== */
+.footer .footer-services ul{padding-right: 0;}
+.footer .copy-right .conditions li {padding-right: 15px;}
+
+

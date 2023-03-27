@@ -1,0 +1,55 @@
+.road{background: #e9e9e9;padding: 7px 0;height: 40px;}
+.road .active{color: #fb5875;font-weight: bold;}
+.road svg{padding: 0 5px;}
+.road p{font-size: 14px;}
+.road a{all: unset;cursor: pointer;}
+
+.clients{padding: 50px 0;}
+h2{color: #00607e;font-size: 27px;}
+.h1{color: #fb5875;}
+.contact-btn a{
+    margin: 0px 20px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    border: transparent;
+    background: linear-gradient(45deg,#fc904f,#fb5875);
+}
+
+/* =========== blog ============= */
+.clients h1{padding: 0 0 30px;font-weight: bold;color: #fb5875;}
+.clients .card{
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+.clients .card p{padding: 0 10px;}
+.clients .service{
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.clients .service::before{
+    content: attr(data-service);
+    position: absolute;
+    background: linear-gradient(45deg,#23f3fea8,#626ff9a1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 1.7rem;
+    font-family: 'Oswald', sans-serif;
+    transform: translateX(-100%);
+}
+.clients .service:hover::before{
+    transform: translateX(0);
+}
+
+/* ============ media ============ */
+@media (max-width:991px) {
+    .clients .service{margin-bottom: 20px;}
+}
