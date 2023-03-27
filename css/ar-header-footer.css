@@ -3,7 +3,7 @@ body{
 }
 
 h1,h2{font-family: 'IBM Plex Sans Arabic', sans-serif;}
-p{font-family: 'Cairo', sans-serif;}
+p,li{font-family: 'Cairo', sans-serif;}
 
 .main-btn svg {margin-right: 6px;}
 
@@ -15,4 +15,9 @@ p{font-family: 'Cairo', sans-serif;}
 .footer .footer-services ul{padding-right: 0;}
 .footer .copy-right .conditions li {padding-right: 15px;}
 
-
+/* =============== media =============== */
+@media (min-width: 991px){
+    .navbar .dropdown-menu {
+        margin: 0 0 0 0;
+    }
+}
