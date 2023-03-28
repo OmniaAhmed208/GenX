@@ -40,7 +40,11 @@
     color: #fff;
     font-size: 20px;
     font-weight: bold;
+    background: #fb5875;
+    padding: 10px;
+    border-radius: 6px
 }
+.hoverCard a:hover{background: #fb5876a7;}
 .web-design .service:hover .hoverCard,
 .android .service:hover .hoverCard,
 .customized-app .service:hover .hoverCard{opacity: 1;transform: perspective(100px) rotateX(0);}
