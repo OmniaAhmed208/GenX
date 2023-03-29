@@ -15,6 +15,7 @@ p,li{font-family: 'Cairo', sans-serif;}
 /* =============== footer =================== */
 .footer .footer-services ul{padding-right: 0;}
 .footer .copy-right .conditions li {padding-right: 15px;}
+.footer .icons ul{padding-right: 0;}
 
 /* =============== media =============== */
 @media (min-width: 991px){
