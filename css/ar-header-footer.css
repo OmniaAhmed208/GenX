@@ -10,6 +10,7 @@ p,li{font-family: 'Cairo', sans-serif;}
 .navbar .dropdown-menu {margin-right: 15px;}
 .navbar .setting .dropdown-toggle::after{margin-left: 0;border-top:0}
 .navbar .dropdown-menu li{text-align: right;}
+.navbar .setting .dropdown-menu{margin-bottom:10px;}
 
 /* =============== footer =================== */
 .footer .footer-services ul{padding-right: 0;}

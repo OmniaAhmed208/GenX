@@ -53,3 +53,9 @@ h2{color: #00607e;font-size: 27px;}
 @media (max-width:991px) {
     .blog .card{margin-bottom: 20px;}
 }
+
+@media (max-width:500px) {
+    .blog .titles ul li a{font-size: 12px;}
+    .blog .titles ul{flex-direction: column;align-items: center;margin-bottom: -35px;padding: 0;}
+    .blog .titles ul li{margin-bottom: 5px;}
+}

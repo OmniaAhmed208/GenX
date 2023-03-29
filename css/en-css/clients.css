@@ -53,3 +53,8 @@ h2{color: #00607e;font-size: 27px;}
 @media (max-width:991px) {
     .clients .service{margin-bottom: 20px;}
 }
+@media (max-width:400px) {
+    .clients .titles ul li a{font-size: 12px;}
+    .clients .titles ul{padding: 0;}
+    .clients .titles ul .dropdown-menu.show{margin: 0 -20px !important;}
+}
