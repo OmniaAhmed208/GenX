@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEN-X Dashboard</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cairo:wght@300;400;700&family=Dancing+Script:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Open+Sans:wght@400;500&family=Oswald:wght@400;700&family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <!-- chart -->
+    <script src="https://cdnjs.com/libraries/Chart.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a href="dashboard.html"><img src="../genx-img/genx.png" class="img-fluid" alt=""></a>
+                <span><i class="fa-solid fa-bars fa-fw"></i></span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link addClient" href="#" onclick="openContent(clientContent)">
+                        <i class="fa-solid fa-plus fa-fw"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-calculator fa-fw"></i>
+                    </a>
+                </li>
+                <li class="nav-item notification">
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-bell fa-fw"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-gear fa-fw"></i>
+                    </a>
+                </li>
+                </ul>
+                <div class="person d-flex">
+                    <p class="fw-bold px-3 pt-3">حسن شعبان</p>
+                    <div class="imgBox">
+                        <img src="../genx-img/11111111.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page d-flex">
+        <div class="sidebar p-4 position-relative">
+            <ul>
+                <li class=" dropdown">
+                    <span class="dropdown-toggle d-flex align-items-center rounded-1 link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-building-columns fa-fw"></i>
+                        <span>المقاولات</span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><span class="dropdown-item" onclick="showData(owners)">الملاك</span></li>
+                        <li><span class="dropdown-item" href="#">المشاريع</span></li>
+                        <li><span class="dropdown-item" href="#">تعريفات</span></li>
+                        <li><span class="dropdown-item" href="#">تقارير</span></li>
+                        <li><span class="dropdown-item" href="#">عمليات ادارية</span></li>
+                        <li><span class="dropdown-item" href="#">عمليات مالية</span></li>
+                        <li><span class="dropdown-item" href="#">العقود</span></li>
+                    </ul>
+                </li>
+                <li class=" dropdown">
+                    <span class="dropdown-toggle d-flex align-items-center rounded-1 link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-cart-shopping fa-fw" onclick="showData(purchases)"></i>
+                        <span onclick="showData(purchases)">المشتريات</span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><span class="dropdown-item" onclick="showData(purchaseOrder)">امر الشراء</span></li>
+                        <li><span class="dropdown-item" onclick="showData(managePurchase)">ادارة طلبات الشراء</span></li>
+                        <li><span class="dropdown-item" onclick="showData(invoicePurchase)">فاتورة الشراء</span></li>
+                    </ul>
+                </li>
+                <li class=" dropdown">
+                    <span class="dropdown-toggle d-flex align-items-center rounded-1 link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-store fa-fw" onclick="showData(stores)"></i>
+                        <span onclick="showData(stores)">المخازن</span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><span class="dropdown-item" onclick="showData(deliveryStores)">الاستلام والتسليم</span></li>
+                        <li><span class="dropdown-item" onclick="showData(costsStores)">ضبط تكلفة لاصناف</span></li>
+                        <li><span class="dropdown-item" onclick="showData(inventory)">التسويات والجرد الدوري للمخازن</span></li>
+                        <li><span class="dropdown-item">التقارير المفصلة للمخزن</span></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="d-flex align-items-center rounded-1 link">
+                        <i class="fa-solid fa-chart-line fa-fw"></i>
+                        <span>المبيعات</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="d-flex align-items-center rounded-1 link">
+                        <i class="fa-solid fa-calculator fa-fw"></i>
+                        <span>الحسابات</span>
+                    </span>
+                </li>
+                <li class="mt-5">
+                    <span class="d-flex align-items-center rounded-1 link">
+                        <i class="fa-solid fa-gear fa-fw"></i>
+                        <span>الاعدادات</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content w-100">
+            <div class="container">
+
+                <div class="main-data visibiltyData">
+                    <div class="main-title">
+                        <div class="btns d-flex justify-content-end mt-4">
+                            <button class="btn fw-bold active">يوم</button>
+                            <button class="btn fw-bold">اسبوع</button>
+                            <button class="btn fw-bold">شهر</button>
+                        </div>
+                        <h1 class="text-black-50">الرئيسية</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="box bg-white text-center">
+                                <div class="subscription d-flex justify-content-center align-items-center pt-3">
+                                    <h4>الاشتراكات</h4>
+                                    <div class="circle">
+                                        <div class="donut" style="
+                                            background: conic-gradient(
+                                                #626ff9 0deg 75%,
+                                                #fb5875 80deg 360deg,
+                                                blue 0 0
+                                            );">
+                                            <div class="hole d-flex justify-content-center align-items-center">75 %</div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <hr class="mb-0">
+                                <div class="row">
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="try d-flex justify-content-center">
+                                            <p class="text-black-50">التجربة<br><span class="text-dark">200</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="pay d-flex justify-content-center">
+                                            <p class="text-black-50">مدفوع<br><span class="text-dark">150</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pt-3">
+                                        <a href="#" class="details ">التفاصيل</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="box bg-white text-center">
+                                <div class="subscription d-flex justify-content-center align-items-center pt-3">
+                                    <h4>اشتراكات جديدة</h4>
+                                    <div class="circle">
+                                        <div class="donut" style="
+                                            background: conic-gradient(
+                                                #fb5875 0deg 79%,
+                                                #626ff9 80deg 360deg,
+                                                blue 0 0
+                                            );">
+                                            <div class="hole d-flex justify-content-center align-items-center">79 %</div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <hr class="mb-0">
+                                <div class="row">
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="try d-flex justify-content-center">
+                                            <p class="text-black-50">التجربة<br><span class="text-dark">200</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="pay d-flex justify-content-center">
+                                            <p class="text-black-50">مدفوع<br><span class="text-dark">150</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pt-3">
+                                        <a href="#" class="details ">التفاصيل</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="box bg-white text-center">
+                                <div class="subscription d-flex justify-content-center align-items-center pt-3">
+                                    <h4>تسجيلات جديدة</h4>
+                                    <div class="circle">
+                                        <div class="donut" style="
+                                            background: conic-gradient(
+                                                #626ff9 0deg 98%,
+                                                #fb5875 80deg 360deg,
+                                                blue 0 0
+                                            );">
+                                            <div class="hole d-flex justify-content-center align-items-center">98 %</div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <hr class="mb-0">
+                                <div class="row">
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="try d-flex justify-content-center">
+                                            <p class="text-black-50">التجربة<br><span class="text-dark">200</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="pay d-flex justify-content-center">
+                                            <p class="text-black-50">مدفوع<br><span class="text-dark">150</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pt-3">
+                                        <a href="#" class="details ">التفاصيل</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="box bg-white text-center">
+                                <div class="subscription d-flex justify-content-center align-items-center pt-3">
+                                    <h4>غير المتشترك</h4>
+                                    <div class="circle">
+                                        <div class="donut" style="
+                                            background: conic-gradient(
+                                                #fb5875 0deg 76%,
+                                                #626ff9 80deg 360deg,
+                                                transparent 0 0
+                                            );">
+                                            <div class="hole d-flex justify-content-center align-items-center">76 %</div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <hr class="mb-0">
+                                <div class="row">
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="try d-flex justify-content-center">
+                                            <p class="text-black-50">التجربة<br><span class="text-dark">200</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border-start border-2 pt-3">
+                                        <div class="pay d-flex justify-content-center">
+                                            <p class="text-black-50">مدفوع<br><span class="text-dark">150</span></p>
+                                            <div class="color-div"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pt-3">
+                                        <a href="#" class="details ">التفاصيل</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <h3 style="font-size: 20px;">الاشتراكات</h3>
+                            <div class="box bg-white text-center">
+                                <canvas id="participation"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <h3 style="font-size: 20px;">المبيعات</h3>
+                            <div class="box bg-white text-center">
+                                <canvas id="sales"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="owners mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / العملاء</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(clientContent)">
+                                    عميل جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">م</th>
+                                <th scope="col">الاسم</th>
+                                <th scope="col">رقم الهاتف</th>
+                                <th scope="col">البريد الالكتروني</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="fw-bold">1</td>
+                                <td>عميل 1</td>
+                                <td>0123456789</td>
+                                <td>email@gmail.com</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--end owners-->
+
+                <div class="purchases mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المشتريات</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(purchaseContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container listBtn">
+                            <div class="row bg-white pt-2 pb-2 mb-3">
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100 active">تحت التدقيق</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">تحت الاعتماد</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">المعتمدة</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table active">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">المخزن</th>
+                                <th scope="col">المشروع</th>
+                                <th scope="col">تدقيق المهندس</th>
+                                <th scope="col">اعتماد المسئول</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>200-المخزن الرئيسي</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ====================== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">المخزن</th>
+                                <th scope="col">المشروع</th>
+                                <th scope="col">تدقيق المهندس</th>
+                                <th scope="col">اعتماد المسئول</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>200-المخزن الرئيسي</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ============== المعتمدة ======== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">مرجع طلب الشراء</th>
+                                <th scope="col">موافقة</th>
+                                <th scope="col">الاعتماد</th>
+                                <th scope="col">مفوتر</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>181</td>
+                                <td>معتمد</td>
+                                <td>معتمد</td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="purchaseOrder mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المشتريات</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(purchaseOrderContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container listBtn">
+                            <div class="row bg-white pt-2 pb-2 mb-3">
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100 active">تحت التدقيق</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">تحت الاعتماد</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">المعتمدة</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table active">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">مرجع طلب الشراء</th>
+                                <th scope="col">موافقة</th>
+                                <th scope="col">الاعتماد</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>181</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ====================== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ============== المعتمدة ======== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">مرجع طلب الشراء</th>
+                                <th scope="col">موافقة</th>
+                                <th scope="col">الاعتماد</th>
+                                <th scope="col">مفوتر</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>181</td>
+                                <td>معتمد</td>
+                                <td>معتمد</td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="managePurchase mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المشتريات</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container listBtn">
+                            <div class="row bg-white pt-2 pb-2 mb-3">
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100 active">طلبات جديدة</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">طلبات بدون اوامر شراء</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">طلبات لها اوامر شراء</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- =========== طلبات جديدة ============ -->
+                        <table class="table active">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">المخزن</th>
+                                <th scope="col">المشروع</th>
+                                <th scope="col">تدقيق المهندس</th>
+                                <th scope="col">اعتماد المسئول</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>200-المخزن الرئيسي</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ============= طلبات بدون اوامر شراء ========= -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">المخزن</th>
+                                <th scope="col">المشروع</th>
+                                <th scope="col">تدقيق المهندس</th>
+                                <th scope="col">اعتماد المسئول</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>200-المخزن الرئيسي</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ==============  طلبات لها اوامر شراء ======== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">المخزن</th>
+                                <th scope="col">المشروع</th>
+                                <th scope="col">تدقيق المهندس</th>
+                                <th scope="col">اعتماد المسئول</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>200-المخزن الرئيسي</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="invoicePurchase mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المشتريات</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(invoiceContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">تاريخ الفاتورة</th>
+                                <th scope="col">قيمة الفاتورة</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">رقم السند</th>
+                                <th scope="col">المورد</th>
+                                <th scope="col">مركز التكلفة</th>
+                                <th scope="col">معتمد</th>
+                                <th scope="col">مرحل</th>
+                                <th scope="col">ملغي</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>-</td>
+                                <td>P120230001</td>
+                                <td>20230001</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="stores mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المخازن</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(storesContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">الاسم رباعي</th>
+                                <th scope="col">الاسم انجليزي</th>
+                                <th scope="col">الكود</th>
+                                <th scope="col">الفئة الرئيسية</th>
+                                <th scope="col">فئة منتج للبيع</th>
+                                <th scope="col">فئة مادة خام</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>الاسم</td>
+                                <td>Name</td>
+                                <td>PRQ20230001</td>
+                                <td>-</td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="deliveryStores mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المخازن</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(deliveryStoresContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">رقم السند</th>
+                                <th scope="col">بيانات الفاتورة</th>
+                                <th scope="col">حالة الاعتماد</th>
+                                <th scope="col">مؤشر الاستلام</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>ENTER1</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>معتمد</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="costsStores mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المخازن</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(costsStoresContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container listBtn">
+                            <div class="row bg-white pt-2 pb-2 mb-3">
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100 active">تحت التدقيق</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">تحت الاعتماد</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-secondary w-100">المعتمدة</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table active">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">مرجع طلب الشراء</th>
+                                <th scope="col">موافقة</th>
+                                <th scope="col">الاعتماد</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>181</td>
+                                <td>-</td>
+                                <td>غير معتمد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ================تحت الاعتماد====== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- ============== المعتمدة ======== -->
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم</th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">مرجع طلب الشراء</th>
+                                <th scope="col">موافقة</th>
+                                <th scope="col">الاعتماد</th>
+                                <th scope="col">مفوتر</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>PRQ 20230001</td>
+                                <td>181</td>
+                                <td>معتمد</td>
+                                <td>معتمد</td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="inventory mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المخازن</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(inventoryContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">م</th>
+                                <th scope="col">تاريخ العملة</th>
+                                <th scope="col">الحالة</th>
+                                <th scope="col">المخزن</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>11-11-2022</td>
+                                <td>غير معتمد</td>
+                                <td>المخزن الرئيسي</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== new client ========== -->
+    <div class="clientContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">بيانات العميل</h2>
+            <nav>
+                <div class="parent text-center fw-bold fs-5">
+                    <div class="div1 pt-2 pb-2 active"> البيانات الشخصية</div>
+                    <div class="div2 pt-2 pb-2"> البيانات المالية</div>
+                    <div class="div3 pt-2 pb-2"> بيانات الدعم</div>
+                    <div class="div4 pt-2 pb-2"> مواقع العميل</div>
+                    <div class="div5 pt-2 pb-2"> اصناف العميل</div>
+                </div>
+            </nav>
+
+            <div class="personal mb-5 data active">
+                <h3 class="fw-bold mt-5 mb-5 position-relative">معلومات الملف الشخصي:</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">اسم العميل</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">رقم الهاتف</label>
+                        <span style="color: red;"> * </span>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المحافظة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">ت المنزل</label>
+                        <span style="color: red;"> * </span>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">العنوان</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">البريد الالكتروني</label>
+                        <span style="color: red;"> * </span>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المنطقة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">التالي <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+            <div class="payment mb-5 data">
+                <h3 class="fw-bold mt-5 mb-5 position-relative">البيانات المالية</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">رقم الحساب</label>
+                        <span style="color: red;"> * </span>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">مخزن العميل</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">فترة الاتمان</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">العملة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">حد الاتمان</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الدفع عند الاستلام</label>
+                        <span style="color: red;"> * </span><br>
+                        <button class="btn fw-bold btn-primary w-25">نعم</button>
+                        <button class="btn fw-bold btn-secondary w-25">لا</button>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">مركز التكلفة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn btn-secondary fw-bold exit">رجوع <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    <button class="btn fw-bold btn-primary">التالي <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+            <div class="supporting mb-5 data">
+                <h3 class="fw-bold mt-5 mb-5 position-relative">بيانات الدعم</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label fw-bold">الشهر</label>
+                                <span style="color: red;"> * </span><br>
+                                <select class="month w-50">
+                                    <option value="Hour" selected hidden>12</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold">السنة</label>
+                                <span style="color: red;"> * </span><br>
+                                <select class="year w-50">
+                                    <option value="year" selected hidden>2023</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label fw-bold">مبلغ الدعم</label>
+                                <span style="color: red;"> * </span>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold">كمية الدعم</label>
+                                <span style="color: red;"> * </span>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">رقم السجل</label>
+                        <span style="color: red;"> * </span>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">عنوان الدعم</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label fw-bold">رقم اذن الصرف</label>
+                                <span style="color: red;"> * </span>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold">تاريخ اذن الصرف</label>
+                                <span style="color: red;"> * </span>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label fw-bold">رقم الملف</label>
+                                <span style="color: red;"> * </span>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold">صندوق الملف</label>
+                                <span style="color: red;"> * </span>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">رقم التواصل</label>
+                        <span style="color: red;"> * </span>
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn btn-secondary fw-bold exit">رجوع <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    <button class="btn fw-bold btn-primary">التالي <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== new purchases ========= -->
+    <div class="purchaseContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">بيانات طلب الشراء</h2>
+
+            <div class="invoice">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المستخدم</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الرقم الالي</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">التاريخ</label>
+                        <span style="color: red;"> * </span>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المخزن</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المشروع</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الدعم</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">نوع الخدمة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== purchaseOrder ========= -->
+    <div class="purchaseOrderContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">بيانات امر الشراء</h2>
+
+            <div class="invoice">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المستخدم</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الرقم الالي</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">التاريخ</label>
+                        <span style="color: red;"> * </span>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المخزن</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address" class="form-label fw-bold">طلب الشراء</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المورد</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">نوع الخدمة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المشروع</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== new bill ======== -->
+    <div class="invoiceContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">بيانات الفاتورة</h2>
+
+            <div class="invoice">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المستخدم</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label fw-bold">العملة</label>
+                                <span style="color: red;"> * </span><br>
+                                <select class="month w-50">
+                                    <option selected>EGP</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold">الصرف</label>
+                                <span style="color: red;"> * </span><br>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">التاريخ</label>
+                        <span style="color: red;"> * </span>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المخزن</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">امر الشراء</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">المورد</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الخدمة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">مركز التكلفة</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============ المخازن ========== -->
+    <div class="storesContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">فئة الاصناف</h2>
+
+            <div class="invoice">
+                <div class="row">
+
+                    <div class="col-lg-5 mb-3 rounded">
+                        <div class="grayColor rounded">
+                            <div class="header header1 p-2 rounded">
+                                <div class="div1 d-flex justify-content-center align-items-center"><p class="text-white fw-bold">فئة الاصناف</p></div>
+                                <div class="div2 d-flex justify-content-center align-items-center"><button class="btn binkBtn text-white">فئة فرعية <i class="fa-solid fa-plus"></i></button></div>
+                                <div class="div3 d-flex justify-content-center align-items-center"><button class="btn orgBtn text-white">فئة رئيسية <i class="fa-solid fa-plus"></i></button></div>
+                            </div>
+                            <div class="data p-2">Data</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 mb-3 rounded">
+                        <div class="grayColor rounded">
+                            <div class="header header2 p-2 rounded">
+                                <div class="div1 d-flex justify-content-center align-items-center"><p class="text-white fw-bold">بيانات الفئة</p></div>
+                                <div class="div2 d-flex justify-content-center align-items-center"><button class="btn binkBtn text-white">خروج</button></div>
+                                <div class="div3 d-flex justify-content-center align-items-center"><button class="btn orgBtn text-white">حفظ<i class="fa-solid fa-save"></i></button></div>
+                                <div class="div4 d-flex justify-content-center align-items-center"><button class="btn text-white border">حذف <i class="fa-solid fa-close"></i></button></div>
+                            </div>
+                            <div class="data p-3">
+                                <label class="form-label fw-bold">الكود</label>
+                                <span style="color: red;"> * </span>
+                                <input type="text" class="form-control">
+
+                                <label class="form-label fw-bold mt-3">الاسم عربي</label>
+                                <span style="color: red;"> * </span>
+                                <input type="text" class="form-control">
+
+                                <label class="form-label fw-bold mt-3">الاسم انجليزي</label>
+                                <span style="color: red;"> * </span>
+                                <input type="text" class="form-control">
+
+                                <label class="form-label fw-bold mt-3">الفئة الرئيسية</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label fw-bold mt-3">فئة منتج للبيع؟</label>
+                                        <span style="color: red;"> * </span><br>
+                                        <button class="btn fw-bold btn-primary w-25">نعم</button>
+                                        <button class="btn fw-bold btn-secondary w-25">لا</button>
+                                    </div>
+                                    <div class="col lg-6">
+                                        <label class="form-label fw-bold mt-3">فئة مواد خام؟</label>
+                                        <span style="color: red;"> * </span><br>
+                                        <button class="btn fw-bold btn-primary w-25">نعم</button>
+                                        <button class="btn fw-bold btn-secondary w-25">لا</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 mb-3 rounded">
+                        <div class="grayColor rounded">
+                            <div class="header header3 p-2 rounded">
+                                <div class="div1 d-flex align-items-center"><button class="btn binkBtn text-white">جديد<i class="fa-solid fa-plus"></i></button></div>
+                            </div>
+                            <div class="data p-2">Data</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- ========= الاستلام والتسليم -->
+    <div class="deliveryStoresContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">سند استلام</h2>
+
+            <div class="invoice">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="form-label fw-bold">المستخدم</label>
+                                <span style="color: red;"> * </span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col lg-6">
+                                <label class="form-label fw-bold">رقم الحساب</label>
+                                <span style="color: red;"> * </span><br>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label fw-bold">الفاتورة</label>
+                                <span style="color: red;"> * </span><br>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold">بيانات الفاتورة</label>
+                                <span style="color: red;"> * </span><br>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">التاريخ</label>
+                        <span style="color: red;"> * </span>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">رقم السند</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الرقم الالي</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">العميل / المورد</label>
+                        <span style="color: red;"> * </span><br>
+                        <select class="w-100">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">الفني</label>
+                        <span style="color: red;"> * </span><br>
+                        <select class="w-100">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">معتمد</label>
+                        <span style="color: red;"> * </span><br>
+                        <button class="btn fw-bold btn-primary w-25">نعم</button>
+                        <button class="btn fw-bold btn-secondary w-25">لا</button>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">مركز التكلفة</label>
+                        <span style="color: red;"> * </span><br>
+                        <select class="w-100">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">عميل غير مسجل</label>
+                        <span style="color: red;"> * </span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== costsStores ======== -->
+    <div class="costsStoresContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">ضبط تكلفة الاصناف</h2>
+
+            <div class="invoice d-flex align-items-center">
+                <div class="w-50 mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">من تاريخ</label>
+                            <span style="color: red;"> * </span><br>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">الي تاريخ</label>
+                            <span style="color: red;"> * </span><br>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+
+                    <label class="form-label fw-bold mt-3">الصنف</label>
+                    <span style="color: red;"> * </span><br>
+                    <select class="w-100">
+                        <option value="" selected></option>
+                    </select>
+
+                    <label class="form-label fw-bold mt-3">رقم الفاتورة</label>
+                    <span style="color: red;"> * </span><br>
+                    <select class="w-100">
+                        <option value="" selected></option>
+                    </select>
+                </div>
+                <div class="btns mt-3 d-flex justify-content-end align-items-flex-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== الجرد ======== -->
+    <div class="inventoryContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">التسويات الجردية / تفاصيل الجرد</h2>
+
+            <div class="invoice d-flex align-items-center">
+                <div class="w-50 mt-3">
+                    <label class="form-label fw-bold">تاريخ العملة</label>
+                    <span style="color: red;"> * </span><br>
+                    <input type="date" class="form-control">
+
+                    <label class="form-label fw-bold mt-3">المخزن</label>
+                    <span style="color: red;"> * </span><br>
+                    <select class="w-100">
+                        <option value="" selected></option>
+                    </select>
+
+                    <label class="form-label fw-bold mt-3">معتمد</label>
+                    <span style="color: red;"> * </span><br>
+                    <button class="btn fw-bold btn-primary w-25">نعم</button>
+                    <button class="btn fw-bold btn-secondary w-25">لا</button>
+                </div>
+                <div class="btns mt-3 d-flex justify-content-end align-items-flex-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        let lineChart = document.getElementById('participation').getContext('2d');
+        let barChart = document.getElementById('sales').getContext('2d');
+        
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 16;
+        Chart.defaults.global.defaultFontColor = '#777';
+
+        let myChart1 = new Chart(lineChart,{
+            type: 'line',
+            data:{
+                datasets:[{
+                    label: 'Participarion',
+                    data:[
+                        0,
+                        900
+                    ],
+                    backgroundColor:'#fb58768c'
+                }]
+            },
+            options:{}
+        });
+
+        let myChart2 = new Chart(barChart,{
+            type: 'bar',
+            data:{
+                labels:['الاول','التاني'],
+                datasets:[{
+                    label: 'Sales',
+                    data:[
+                        500,
+                        150,
+                        0
+                    ],
+                    backgroundColor:[
+                        '#fb58768c',
+                        '#626ff981',
+                        'transparent'
+                    ],
+                    borderWidth:1,
+                }]
+            },
+            options:{}
+        });
+
+    </script>
+</body>
+</html>
