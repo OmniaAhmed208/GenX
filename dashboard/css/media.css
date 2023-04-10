@@ -11,6 +11,8 @@
     .managePurchase .listBtn .btn,
     .costsStores .listBtn .btn{margin:3px 0;}
 }
+
+
 @media (max-width:767px) {
     .navbar .navbar-brand svg{
         /* display: none; */
@@ -42,11 +44,21 @@
     }
 
     .client-content nav .parent div{font-size: 16px;}
+
+    .salesPointsContent .invoice p{margin-top: 10px;}
+    .salesPointsContent .invoice p ~ div{
+        text-align: start !important;
+        padding: 9px 18px !important;
+    }
+    .salesPointsContent table{margin-top: 20px;font-size: 12px;}
 }
+
 
 @media (max-width:500px) {
     .client-content nav .parent div{font-size: 13px;}
 }
+
+
 @media (max-width:450px) {
     .navbar .person{margin-top: -66px;}
     .navbar .person p{display: none;}
@@ -55,6 +67,7 @@
     .clients .btn-search{display: block !important;}
     .clients .btn-search input{width: 100%;margin-bottom: 15px;}
 }
+
 
 @media (max-width:400px) {
     .storesContent .header1 {
@@ -77,6 +90,7 @@
     .storesContent .header2 .div3 { grid-area: 2 / 1 / 3 / 2; }
     .storesContent .header2 .div4 { grid-area: 2 / 2 / 3 / 3; }
 }
+
 
 @media (max-width:280px) {
     .main-content .btns button {

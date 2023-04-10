@@ -34,7 +34,7 @@ input[type='checkbox']{
     accent-color: #fb5875;
 }
 
-::-webkit-scrollbar{width: 0.5em;}
+::-webkit-scrollbar{width: 0.5em;height: 0.5em;}
 ::-webkit-scrollbar-track{background-color: #fff;}
 ::-webkit-scrollbar-thumb{background-color: #626ff9;box-shadow: 0px 0px 30px 30px #626ff9}
 
@@ -94,7 +94,7 @@ input[type='checkbox']{
 }
 
 .sidebar ul li .link span{font-size: 16px;margin-right: 10px;position: relative;}
-.sidebar ul li .dropdown-menu.show{display: flex;flex-direction: column;align-items: flex-start;}
+.sidebar ul li .dropdown-menu.show{display: flex;flex-direction: column;align-items: flex-start;cursor: pointer;}
 .sidebar ul li .dropdown-menu.show li{width: 100%;text-align-last: start;}
 .sidebar ul li .dropdown-item{margin-right: 0 !important}
 .sidebar .dropdown-toggle::after{position: absolute;left: 10px;}
@@ -120,7 +120,9 @@ input[type='checkbox']{
 .main-content .stores,
 .main-content .deliveryStores,
 .main-content .costsStores,
-.main-content .inventory{display:none}
+.main-content .inventory,
+.main-content .salesInvoice,
+.main-content .salesPoints {display:none}
 
 .donut {
     width: 70px; height: 70px;
@@ -195,7 +197,9 @@ input[type='checkbox']{
 .storesContent,
 .deliveryStoresContent,
 .costsStoresContent,
-.inventoryContent {
+.inventoryContent,
+.salesInvoiceContent,
+.salesPointsContent {
     top: 0;
     z-index: 999;
     right: 0;
@@ -212,7 +216,9 @@ input[type='checkbox']{
 .storesContent .close,
 .deliveryStoresContent .close,
 .costsStoresContent .close,
-.inventoryContent .close{left: 0;margin: -22px 18px;cursor: pointer;}
+.inventoryContent .close,
+.salesInvoiceContent .close,
+.salesPointsContent .close {left: 0;margin: -22px 18px;cursor: pointer;}
 
 .clientContent h2::before,
 .clientContent h3::before,
@@ -222,7 +228,9 @@ input[type='checkbox']{
 .storesContent h2::before,
 .deliveryStoresContent h2::before,
 .costsStoresContent h2::before,
-.inventoryContent h2::before{
+.inventoryContent h2::before,
+.salesInvoiceContent h2::before,
+.salesPointsContent h2::before {
     content: '';
     position: absolute;
     width: 57px;
@@ -248,12 +256,17 @@ input[type='checkbox']{
 .clientContent nav .parent .div5 { grid-area: 1 / 5 / 2 / 6; }
 
 .clientContent .personal, .clientContent .payment, .clientContent .supporting{display: none;}
+.salesInvoiceContent .invoiceData,.salesInvoiceContent .paymentData{display: none;}
+.salesInvoiceContent .active{display: block;}
+
 .clientContent .supporting select,
 .invoiceContent select,
 .storesContent select,
 .deliveryStoresContent select,
 .costsStoresContent select,
-.inventoryContent select {
+.inventoryContent select,
+.salesInvoiceContent select,
+.salesPointsContent select {
     border: 1px solid #ddd;
     padding: 4px 10px;
     border-radius: 6px;
@@ -269,7 +282,9 @@ input[type='checkbox']{
 .storesContent .btn svg,
 .deliveryStoresContent .btn svg,
 .costsStoresContent .btn svg,
-.inventoryContent .btn svg{margin-right: 5px;}
+.inventoryContent .btn svg,
+.salesInvoiceContent .btn svg,
+.salesPointsContent .btn svg {margin-right: 5px;}
 
 /* =========== purchases ============ */
 
@@ -337,3 +352,12 @@ input[type='checkbox']{
     bottom: 57px;
     left: 35px;
 }
+
+/* =========== sales ========== */
+.salesPoints{overflow-x: scroll;}
+.salesPoints thead{background: #fb5875;color:#fff}
+.salesPoints thead th{border-color: #ddd;}
+
+.salesPointsContent .grayColor{background: #ddd;}
+.salesPointsContent table th,
+.salesPointsContent table td{text-align: center;}

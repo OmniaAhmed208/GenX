@@ -28,6 +28,8 @@ let storesContent = document.querySelector('.storesContent');
 let deliveryStoresContent = document.querySelector('.deliveryStoresContent');
 let costsStoresContent = document.querySelector('.costsStoresContent');
 let inventoryContent = document.querySelector('.inventoryContent');
+let salesInvoiceContent = document.querySelector('.salesInvoiceContent');
+let salesPointsContent = document.querySelector('.salesPointsContent');
 
 
 let mainData = document.querySelector('.main-data');
@@ -40,6 +42,8 @@ let stores = document.querySelector('.main-content .stores');
 let deliveryStores = document.querySelector('.main-content .deliveryStores');
 let costsStores = document.querySelector('.main-content .costsStores');
 let inventory = document.querySelector('.inventory');
+let salesInvoice = document.querySelector('.salesInvoice');
+let salesPoints = document.querySelector('.salesPoints');
 
 
 function showData(data){
@@ -146,6 +150,32 @@ for(let i=2020 ; i <= 2023; i++){
     year.firstElementChild.insertAdjacentHTML('afterend', option);
 }
 
+// ============ Sales
+
+let dataSales = document.querySelectorAll('.salesInvoiceContent .data');
+let invoiceDataSales = document.querySelector('.salesInvoiceContent .invoiceData');
+let paymentDataSales = document.querySelector('.salesInvoiceContent .paymentData');
+
+dataSales.forEach((data)=>{
+    invoiceDataSales.classList.add('active')
+    let next = data.lastElementChild;//.btns div => contains next,previous
+    console.log(next);
+    next.onclick = function(e){
+        if(e.target.parentElement.parentElement.classList.contains('invoiceData')){
+            console.log(true)
+            data.classList.remove('active');
+            paymentDataSales.classList.add('active');
+        }
+
+        if(e.target.parentElement.parentElement.classList.contains('paymentData')){
+            // console.log(true)
+            if(e.target.classList.contains('exit')){
+                data.classList.remove('active');
+                invoiceDataSales.classList.add('active');
+            }
+        }
+    }
+})   
 
 // ================ purchases , managePurchase , purchaseOrderBtn
 
