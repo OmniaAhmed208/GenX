@@ -44,6 +44,7 @@ let costsStores = document.querySelector('.main-content .costsStores');
 let inventory = document.querySelector('.inventory');
 let salesInvoice = document.querySelector('.salesInvoice');
 let salesPoints = document.querySelector('.salesPoints');
+let salesReports = document.querySelector('.salesReports');
 
 
 function showData(data){
@@ -291,3 +292,60 @@ costsStoresBtn.forEach((btn,index)=>{
         
     }
 }) 
+
+//  =============== reports =======
+
+let reportNames = document.querySelectorAll('.salesReports .reportsName .parent div');
+let reportTables = document.querySelectorAll('.salesReports .data');
+
+reportNames.forEach((item,index)=>{
+    item.onclick = function(){
+        reportNames.forEach(report=>{
+            report.classList.remove('active');
+        });
+        item.classList.add('active')
+        
+        if(index == 1){
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[1].classList.add('active')
+        }
+        else if(index == 2){
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[2].classList.add('active')
+        }
+        else if(index == 3){
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[3].classList.add('active')
+        }
+        else if(index == 4){
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[4].classList.add('active')
+        }
+        else if(index == 5){
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[5].classList.add('active')
+        }
+        else if(index == 6){
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[6].classList.add('active')
+        }
+        else{
+            reportTables.forEach(table=>{
+                table.classList.remove('active')
+            });
+            reportTables[0].classList.add('active')
+        }
+    }
+})

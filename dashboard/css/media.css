@@ -10,6 +10,10 @@
     .purchaseOrder .listBtn .btn,
     .managePurchase .listBtn .btn,
     .costsStores .listBtn .btn{margin:3px 0;}
+
+    .salesPoints,.salesReports{overflow-x: scroll;}
+    .salesPoints table th,.salesPoints table td,
+    .salesReports table {font-size: 12px;}
 }
 
 

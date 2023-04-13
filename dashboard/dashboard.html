@@ -107,7 +107,7 @@
                     </span>
                     <ul class="dropdown-menu">
                         <li><span class="dropdown-item" onclick="showData(salesInvoice)">فواتير المبيعات</span></li>
-                        <li><span class="dropdown-item" onclick="showData()">التقارير المفصلة للمبيعات</span></li>
+                        <li><span class="dropdown-item" onclick="showData(salesReports)">التقارير المفصلة للمبيعات</span></li>
                         <li><span class="dropdown-item" onclick="showData()">التقارير المفصلة ارباح المبيعات وتكاليفها</span></li>
                         <li><span class="dropdown-item" onclick="showData(salesPoints)">نقاط للبيع</span></li>
                     </ul>
@@ -1207,6 +1207,337 @@
                         </table>
                     </div>
                 </div>
+
+                <!--  التقارير المفصلة للمبيعات ========-->
+                <div class="salesReports mt-5 mb-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / المبيعات</h2>
+                    <div class="details grayColor mb-4 pb-3 rounded">
+                        <div class="title d-flex w-100 justify-content-center text-white p-2 fw-bold rounded">
+                            <div>تفاصيل المبيعات</div>
+                        </div>
+                        <div class="row mt-3 mb-3 px-2">
+                            <div class="col-sm-6 col-md-3">
+                                <label class="form-label fw-bold">الفرع</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <label class="form-label fw-bold">العميل</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <label class="form-label fw-bold">نوع العميل</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <label class="form-label fw-bold">مركز التكلفة</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row px-2">
+                            <div class="col-sm-4 col-lg-2">
+                                <label class="form-label fw-bold">من تاريخ</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-lg-2">
+                                <label class="form-label fw-bold">الي تاريخ</label>
+                                <span style="color: red;"> * </span>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-sm-4 col-lg-2">
+                                <label class="form-label fw-bold">نوع الفاتورة</label>
+                                <span style="color: red;"> * </span>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-sm-4 col-lg-2">
+                                <label class="form-label fw-bold">المندوب</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-lg-2">
+                                <label class="form-label fw-bold">المستخدم</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 col-lg-2">
+                                <label class="form-label fw-bold">المتبقي</label>
+                                <span style="color: red;"> * </span>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reportsName bg-white mb-4">
+                        <div class="parent">
+                            <div class="div1 active"> <p>تفصيلي</p></div>
+                            <div class="div2"> اجمالي حسب العميل</div>
+                            <div class="div3"> اجمالي حسب الدولة</div>
+                            <div class="div4"> اجمالي حسب الفرع</div>
+                            <div class="div5"> اجمالي حسب الشهر</div>
+                            <div class="div6"> بيانات الشحن</div>
+                            <div class="div7"> اجمالي المبيعات</div>
+                        </div>
+                    </div>
+
+                   <div class="data active">
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">رقم <br>السند</th>
+                                <th scope="col">العميل</th>
+                                <th scope="col">الفرع</th>
+                                <th scope="col">تاريخ<br> الفاتورة</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">الصافي</th>
+                                <th scope="col">نقدي</th>
+                                <th scope="col">كي<br> نت</th>
+                                <th scope="col">فيزا</th>
+                                <th scope="col">رابط</th>
+                                <th scope="col">اجمالي <br>المدفوع</th>
+                                <th scope="col">المتبقي</th>
+                                <th scope="col">المندوب</th>
+                                <th scope="col">المصاريف</th>
+                                <th scope="col">قيمة<br> التوصيل</th>
+                                <th scope="col">تكلفة<br> المبيعات</th>
+                                <th scope="col">هامش <br>الربح</th>
+                                <th scope="col">الدولة</th>
+                                <th scope="col">المستخدم</th>
+                            </thead>
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        </table>
+                   </div>
+
+                    <div class="data">
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">العميل</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">الصافي</th>
+                                <th scope="col">نقدي</th>
+                                <th scope="col">كي نت</th>
+                                <th scope="col">فيزا</th>
+                                <th scope="col">رابط</th>
+                                <th scope="col">اجمالي المدفوع</th>
+                                <th scope="col">المتبقي</th>
+                                <th scope="col">قيمة الوصل</th>
+                                <th scope="col">قيمة التوصيل</th>
+                                <th scope="col">صافي الربح</th>
+                            </thead>
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="data">
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">الدولة</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">الصافي</th>
+                                <th scope="col">نقدي</th>
+                                <th scope="col">كي نت</th>
+                                <th scope="col">فيزا</th>
+                                <th scope="col">رابط</th>
+                                <th scope="col">اجمالي المدفوع</th>
+                                <th scope="col">المتبقي</th>
+                                <th scope="col">قيمة التوصيل</th>
+                                <th scope="col">اجمالي التكلفة</th>
+                                <th scope="col">صافي الربح</th>
+                            </thead>
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="data">
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">الفرع</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">الصافي</th>
+                                <th scope="col">نقدي</th>
+                                <th scope="col">كي نت</th>
+                                <th scope="col">فيزا</th>
+                                <th scope="col">رابط</th>
+                                <th scope="col">اجمالي المدفوع</th>
+                                <th scope="col">المتبقي</th>
+                                <th scope="col">قيمة التوصيل</th>
+                                <th scope="col">اجمالي التكلفة</th>
+                                <th scope="col">صافي الربح</th>
+                            </thead>
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        </table>
+                    </div>    
+
+                    <div class="data">
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">الشهر</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">الصافي</th>
+                                <th scope="col">نقدي</th>
+                                <th scope="col">كي نت</th>
+                                <th scope="col">فيزا</th>
+                                <th scope="col">رابط</th>
+                                <th scope="col">اجمالي المدفوع</th>
+                                <th scope="col">المتبقي</th>
+                                <th scope="col">قيمة التوصيل</th>
+                                <th scope="col">اجمالي التكلفة</th>
+                                <th scope="col">صافي الربح</th>
+                            </thead>
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        </table>
+                    </div>    
+
+                    <div class="data">
+                        <i class="fa-solid fa-search fa-fw"></i>
+                    </div>
+
+                    <div class="data">
+                        <table class="table table-striped">
+                            <thead>
+                                <th scope="col">الفرع</th>
+                                <th scope="col">تاريخ الفاتورة</th>
+                                <th scope="col">الاجمالي</th>
+                                <th scope="col">خصم</th>
+                                <th scope="col">الصافي</th>
+                                <th scope="col">نقدي</th>
+                                <th scope="col">كي نت</th>
+                                <th scope="col">فيزا</th>
+                                <th scope="col">رابط</th>
+                                <th scope="col">اجمالي المدفوع</th>
+                                <th scope="col">المتبقي</th>
+                                <th scope="col">المندوب</th>
+                                <th scope="col">المصاريف</th>
+                                <th scope="col">قيمة التوصيل</th>
+                                <th scope="col">تكلفة المبيعات</th>
+                                <th scope="col">هامش الربح</th>
+                                <th scope="col">الدولة</th>
+                                <th scope="col">المستخدم</th>
+                            </thead>
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> <!--end reports-->
 
             </div>
         </div>
