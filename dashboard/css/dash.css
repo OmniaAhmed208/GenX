@@ -128,7 +128,11 @@ input[type='checkbox']{
 .main-content .inventory,
 .main-content .salesInvoice,
 .main-content .salesPoints,
-.main-content .salesReports {display:none}
+.main-content .salesReports,
+.main-content .dailyMoney,
+.main-content .cashBond,
+.main-content .trailBalance,
+.main-content .balanceSheet {display:none}
 
 .donut {
     width: 70px; height: 70px;
@@ -205,7 +209,9 @@ input[type='checkbox']{
 .costsStoresContent,
 .inventoryContent,
 .salesInvoiceContent,
-.salesPointsContent {
+.salesPointsContent,
+.dailyMoneyContent,
+.cashBondContent {
     top: 0;
     z-index: 999;
     right: 0;
@@ -224,7 +230,9 @@ input[type='checkbox']{
 .costsStoresContent .close,
 .inventoryContent .close,
 .salesInvoiceContent .close,
-.salesPointsContent .close {left: 0;margin: -22px 18px;cursor: pointer;}
+.salesPointsContent .close,
+.dailyMoneyContent .close,
+.cashBondContent .close {left: 0;margin: -22px 18px;cursor: pointer;}
 
 .clientContent h2::before,
 .clientContent h3::before,
@@ -236,7 +244,9 @@ input[type='checkbox']{
 .costsStoresContent h2::before,
 .inventoryContent h2::before,
 .salesInvoiceContent h2::before,
-.salesPointsContent h2::before {
+.salesPointsContent h2::before,
+.dailyMoneyContent h2::before,
+.cashBondContent h2::before {
     content: '';
     position: absolute;
     width: 57px;
@@ -272,7 +282,12 @@ input[type='checkbox']{
 .costsStoresContent select,
 .inventoryContent select,
 .salesInvoiceContent select,
-.salesPointsContent select {
+.salesPointsContent select,
+.dailyMoneyContent select,
+.dailyMoneyContent textarea,
+.cashBondContent select,
+.trailBalance .details select,
+.balanceSheet select {
     border: 1px solid #ddd;
     padding: 4px 10px;
     border-radius: 6px;
@@ -290,7 +305,9 @@ input[type='checkbox']{
 .costsStoresContent .btn svg,
 .inventoryContent .btn svg,
 .salesInvoiceContent .btn svg,
-.salesPointsContent .btn svg {margin-right: 5px;}
+.salesPointsContent .btn svg,
+.dailyMoneyContent .btn svg,
+.cashBondContent .btn svg {margin-right: 5px;}
 
 /* =========== purchases ============ */
 
@@ -417,7 +434,40 @@ input[type='checkbox']{
 .salesReports .data{display: none;}
 .salesReports .data.active{display: flex; justify-content: center;align-items: center;}
 
+/* ========= dailyMoneyContent ========= */
+.dailyMoneyContent .grayColor{background: #ddd;}
+.dailyMoneyContent table thead{background: #626ff9;color: #fff;}
+.dailyMoneyContent table th,
+.dailyMoneyContent table td{text-align: center;border: 1px solid #ddd;}
 
+/* ============== cashBond =========== */
+.main-content .cashBond .title{background:#626ff9}
+.main-content .cashBond .details select{
+    border: 1px solid #ddd;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+.main-content .cashBond .details{background: #ddd;}
 
+/* ========== trailBalance ========= */
+.trailBalance .details .title{background: #626ff9;}
+.trailBalance .grayColor{background: #ddd;}
+.trailBalance .calc .data{font-weight: bold;text-align: center;border-radius: 6px;padding: 10px 0 2px;}
+.trailBalance .calc .data.d1{background: #626ff9;}
+.trailBalance .calc .data.d2{background: #23f2fe;}
+.trailBalance .calc .data.d3{background: #fb5875;}
+.trailBalance .calc .data.d4{background: #fc904f;}
+.trailBalance .box{box-shadow: 0px -1px 3px #000;padding: 5px;}
+.trailBalance .box .active{background: #626ff9;color: #fff;}
+.trailBalance .box .item{cursor: pointer;}
 
-
+/* =========== balanceSheet ======== */
+.balanceSheet .grayColor{background: #ddd;}
+.balanceSheet .bink{background: #fb5875;}
+.balanceSheet .blue{background: #626ff9;}
+.balanceSheet .details .title{background: #626ff9;}
+.balanceSheet .boxes .search input {
+    box-shadow: 0 0 0 #ddd;
+}
+.balanceSheet .boxes .box .data{padding: 80px 0;flex-direction: column;}
+.balanceSheet .boxes .box .data svg{font-size: 20px;}

@@ -30,7 +30,8 @@ let costsStoresContent = document.querySelector('.costsStoresContent');
 let inventoryContent = document.querySelector('.inventoryContent');
 let salesInvoiceContent = document.querySelector('.salesInvoiceContent');
 let salesPointsContent = document.querySelector('.salesPointsContent');
-
+let dailyMoneyContent = document.querySelector('.dailyMoneyContent');
+let cashBondContent = document.querySelector('.cashBondContent');
 
 let mainData = document.querySelector('.main-data');
 let owners = document.querySelector('.owners');
@@ -45,6 +46,10 @@ let inventory = document.querySelector('.inventory');
 let salesInvoice = document.querySelector('.salesInvoice');
 let salesPoints = document.querySelector('.salesPoints');
 let salesReports = document.querySelector('.salesReports');
+let dailyMoney = document.querySelector('.dailyMoney');
+let cashBond = document.querySelector('.cashBond');
+let trailBalance = document.querySelector('.trailBalance');
+let balanceSheet = document.querySelector('.balanceSheet');
 
 
 function showData(data){
@@ -349,3 +354,17 @@ reportNames.forEach((item,index)=>{
         }
     }
 })
+
+// ============ trailBalance
+let trailBalanceItems = document.querySelectorAll('.trailBalance .box .item');
+
+trailBalanceItems.forEach(item=>{
+    item.onclick = function(){
+        trailBalanceItems.forEach(i=>{
+            i.classList.remove('active')
+        })
+        item.classList.add('active')
+    }
+})
+
+

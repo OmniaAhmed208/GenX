@@ -112,11 +112,20 @@
                         <li><span class="dropdown-item" onclick="showData(salesPoints)">نقاط للبيع</span></li>
                     </ul>
                 </li>
-                <li>
-                    <span class="d-flex align-items-center rounded-1 link">
+                <li class=" dropdown">
+                    <span class="dropdown-toggle d-flex align-items-center rounded-1 link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-calculator fa-fw"></i>
                         <span>الحسابات</span>
                     </span>
+                    <ul class="dropdown-menu">
+                        <li><span class="dropdown-item" onclick="showData(dailyMoney)">القيود المالية اليومية</span></li>
+                        <li><span class="dropdown-item" onclick="showData(cashBond)">سند صرف نقدي</span></li>
+                        <!-- <li><span class="dropdown-item" onclick="showData(automatedBound)">سند صرف ألي</span></li> -->
+                        <!-- <li><span class="dropdown-item" onclick="showData(banksBonds)">السندات البنكية</span></li> -->
+                        <li><span class="dropdown-item" onclick="showData(trailBalance)">ميزان المراجعة</span></li>
+                        <li><span class="dropdown-item" onclick="showData(balanceSheet)">الميزانية العمومية</span></li>
+                        <li><span class="dropdown-item" onclick="showData()">التقارير المالية</span></li>
+                    </ul>
                 </li>
                 <li class="mt-5">
                     <span class="d-flex align-items-center rounded-1 link">
@@ -1218,21 +1227,18 @@
                         <div class="row mt-3 mb-3 px-2">
                             <div class="col-sm-6 col-md-3">
                                 <label class="form-label fw-bold">الفرع</label>
-                                <span style="color: red;"> * </span>
                                 <select class="w-100">
                                     <option value="" selected></option>
                                 </select>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <label class="form-label fw-bold">العميل</label>
-                                <span style="color: red;"> * </span>
                                 <select class="w-100">
                                     <option value="" selected></option>
                                 </select>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <label class="form-label fw-bold">نوع العميل</label>
-                                <span style="color: red;"> * </span>
                                 <select class="w-100">
                                     <option value="" selected></option>
                                 </select>
@@ -1260,26 +1266,22 @@
                             </div>
                             <div class="col-sm-4 col-lg-2">
                                 <label class="form-label fw-bold">نوع الفاتورة</label>
-                                <span style="color: red;"> * </span>
                                 <input type="date" class="form-control">
                             </div>
                             <div class="col-sm-4 col-lg-2">
                                 <label class="form-label fw-bold">المندوب</label>
-                                <span style="color: red;"> * </span>
                                 <select class="w-100">
                                     <option value="" selected></option>
                                 </select>
                             </div>
                             <div class="col-sm-4 col-lg-2">
                                 <label class="form-label fw-bold">المستخدم</label>
-                                <span style="color: red;"> * </span>
                                 <select class="w-100">
                                     <option value="" selected></option>
                                 </select>
                             </div>
                             <div class="col-sm-4 col-lg-2">
                                 <label class="form-label fw-bold">المتبقي</label>
-                                <span style="color: red;"> * </span>
                                 <select class="w-100">
                                     <option value="" selected></option>
                                 </select>
@@ -1538,6 +1540,394 @@
                         </table>
                     </div>
                 </div> <!--end reports-->
+
+                <!-- =========== القيود المالية اليومية ========= -->
+                <div class="dailyMoney mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / الحسابات</h2>
+                    <div class="clients">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(dailyMoneyContent)">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">كود الي</th>
+                                <th scope="col">رقم السند</th>
+                                <th scope="col">تاريخ السند</th>
+                                <th scope="col">اجمالي المدين</th>
+                                <th scope="col">اجمالي الدائن</th>
+                                <th scope="col">ملاحظات</th>
+                                <th scope="col">العملة</th>
+                                <th scope="col">معتمد</th>
+                                <th scope="col">مرحل</th>
+                                <th scope="col">ملغي</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ENTRY.20230001</td>
+                                <td>-</td>
+                                <td>11-11-2022</td>
+                                <td>0.000</td>
+                                <td>0.000</td>
+                                <td>-</td>
+                                <td>EGP</td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ============ صرف نقدي ======= -->
+                <div class="cashBond mt-5 visibiltyData">
+                    <h2 class="fs-4">الرئيسية / الحسابات / سند صرف نقدي</h2>
+                    <div class="clients">
+                        
+                        <div class="mb-3 d-flex justify-content-end">
+                            <a href="#" class="new-client btn text-white fw-bold" onclick="openContent(cashBondContent)">
+                                طلب جديد
+                                <i class="fa-solid fa-plus fa-fw"></i>
+                            </a>
+                            <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                خروج
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </a>
+                        </div>
+
+                        <div class="details grayColor mb-4 pb-3 rounded">
+                            <div class="title d-flex w-100 justify-content-center text-white p-2 fw-bold rounded">
+                                <div>معايير البحث</div>
+                            </div>
+                            <div class="row mt-3 mb-3 px-2">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">الفرع</label>
+                                    <select class="w-100">
+                                        <option value="" selected></option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">الالي من</label>
+                                            <select class="w-100">
+                                                <option value="" selected></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">الالي الي</label>
+                                            <select class="w-100">
+                                                <option value="" selected></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">الرقم من</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">الرقم الي</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">من تاريخ</label>
+                                            <span style="color: red;"> * </span>
+                                            <select class="w-100">
+                                                <option value="" selected></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">الي تاريخ</label>
+                                            <span style="color: red;"> * </span>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">نوع العملية</label>
+                                            <select class="w-100">
+                                                <option value="" selected></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label fw-bold">الحالة</label>
+                                            <select class="w-100">
+                                                <option value="" selected></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">المستخدم/th>
+                                <th scope="col">التاريخ</th>
+                                <th scope="col">رقم الوثيقة</th>
+                                <th scope="col">الرقم الالي</th>
+                                <th scope="col">رقم السند</th>
+                                <th scope="col">دائن</th>
+                                <th scope="col">مدين</th>
+                                <th scope="col">معتمد</th>
+                                <th scope="col">مرحل</th>
+                                <th scope="col">ملغي</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-edit fa-fw"></i></td>
+                                <td>ADMIN</td>
+                                <td>11-11-2022</td>
+                                <td>-</td>
+                                <td>P120230001</td>
+                                <td>20230001</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <!-- ================ ميزان المراجعة ============ -->
+                <div class="trailBalance mt-5 visibiltyData">
+                    <h2 class="fs-4 mb-4">الرئيسية / الحسابات / ميزان المراجعة</h2>
+                    <div class="clients">
+                        
+                        <div class="details grayColor mb-4 pb-3 rounded">
+                            <div class="title d-flex w-100 justify-content-center text-white p-2 fw-bold rounded">
+                                <div>معايير البحث</div>
+                            </div>
+                            <div class="row mt-3 mb-3 px-2 justify-content-center">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">الفرع</label>
+                                    <select class="w-100">
+                                        <option value="" selected></option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">نوع الحساب</label>
+                                    <span style="color: red;"> * </span>
+                                    <select class="w-100">
+                                        <option value="" selected></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-3 px-2 justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                           <label class="form-label fw-bold">من تاريخ</label>
+                                           <span style="color: red;"> * </span>
+                                           <input type="date" class="form-control">
+                                       </div>
+                                       <div class="col-md-6">
+                                           <label class="form-label fw-bold">الي تاريخ</label>
+                                           <span style="color: red;"> * </span>
+                                           <input type="date" class="form-control">
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-md-4">
+                                   <label class="form-label fw-bold">المستوي</label>
+                                   <span style="color: red;"> * </span>
+                                   <select class="w-100">
+                                       <option value="" selected></option>
+                                   </select>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="calc">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="data d1">
+                                        <p class="text-white">0</p>
+                                        <p class="text-white">اجمالي الرصيد السابق</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="data d2">
+                                        <p class="text-white">0</p>
+                                        <p class="text-white">دائن</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="data d3">
+                                        <p class="text-white">0</p>
+                                        <p class="text-white">مدين</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="data d4">
+                                        <p class="text-white">0</p>
+                                        <p class="text-white">الرصيد</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box mt-4">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="item fw-bold text-center pt-3 pb-3 rounded active">ميزان المراجعة</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="item fw-bold text-center pt-3 pb-3 rounded">حسب شجرة الحسابات</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ============== balanceSheet =========== -->
+                <div class="balanceSheet mt-5 visibiltyData">
+                    <h2 class="fs-4 mb-3">الرئيسية / الحسابات / الميزانية</h2>
+                    <div class="clients">
+                        
+                        <div class="row mt-5 mb-5">
+                            <div class="col-md-8">
+                                <div class="btn-search d-flex align-items-center">
+                                    <div class="search position-relative">
+                                        <input type="search" class="rounded-1">
+                                        <i class="fa-solid fa-search fa-fw"></i>
+                                    </div>
+                                    <label class="fw-bold">الاصنف</label>
+                                    <select name="categories">
+                                        <option value="">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="new-client btn text-white fw-bold" onclick="openContent()">
+                                    طلب جديد
+                                    <i class="fa-solid fa-plus fa-fw"></i>
+                                </a>
+                                <a href="#" class="exit btn fw-bold" onclick="exit()">
+                                    خروج
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="details grayColor mb-4 pb-3 rounded">
+                            <div class="title d-flex w-100 justify-content-center text-white p-2 fw-bold rounded">
+                                <div>المتغيرات</div>
+                            </div>
+                            <div class="row mt-3 mb-3 px-2 justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                           <label class="form-label fw-bold">من تاريخ</label>
+                                           <span style="color: red;"> * </span>
+                                           <input type="date" class="form-control">
+                                       </div>
+                                       <div class="col-md-6">
+                                           <label class="form-label fw-bold">الي تاريخ</label>
+                                           <span style="color: red;"> * </span>
+                                           <input type="date" class="form-control">
+                                       </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="totally mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="rounded pt-3 pb-3 text-center text-white fw-bold blue">اجمالي الاصول</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="rounded pt-3 pb-3 text-center text-white fw-bold bink">اجمالي الخصوم</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="boxes">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="box grayColor rounded">
+                                        <div class="blue pt-2 pb-2 rounded text-center text-white fw-bold">الاصول</div>
+                                        <div class="btn-search">
+                                            <div class="search position-relative">
+                                                <input type="search" class="w-100 rounded-1">
+                                                <i class="fa-solid fa-search fa-fw"></i>
+                                            </div>
+                                        </div>
+                                        <div class="data rounded d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-search fa-fw"></i>
+                                            <p class="fw-bold">No data found</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="box grayColor rounded">
+                                        <div class="bink pt-2 pb-2 rounded text-center fw-bold text-white">الخصوم</div>
+                                        <div class="btn-search">
+                                            <div class="search position-relative">
+                                                <input type="search" class="w-100 rounded-1">
+                                                <i class="fa-solid fa-search fa-fw"></i>
+                                            </div>
+                                        </div>
+                                        <div class="data rounded d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-search fa-fw"></i>
+                                            <p class="fw-bold">No data found</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -2509,8 +2899,229 @@
         </div>
     </div>
 
+    <!-- ========== القيود المالية اليومية ============ -->
+    <div class="dailyMoneyContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">قيد حاسبي</h2>
 
+            <div class="invoice">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="grayColor pt-3 pb-3 rounded">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">كود الي</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">رقم السند</label>
+                                        <select class="w-100">
+                                            <option value="" selected></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">التاريخ</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">حالة السند</label>
+                                        <br>
+                                        <button class="btn fw-bold btn-primary">مرحل</button>
+                                        <button class="btn fw-bold btn-secondary">غير مرحل</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="grayColor pt-3 pb-3 rounded">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">سعر الصرف</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">العملة</label>
+                                        <select class="w-100">
+                                            <option value="" selected></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label class="form-label fw-bold">ملاحظات</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea cols="30" rows="2" class="w-100"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <table class="table table-striped mt-3 mb-3">
+                    <thead>
+                    <tr>
+                        <th scope="col">الحسابات</th>
+                        <th scope="col">مدين</th>
+                        <th scope="col">دائن</th>
+                        <th scope="col">مركز التكلفة</th>
+                        <th scope="col">نوع الخدمة</th>
+                        <th scope="col">ملاحظات</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    <label class="form-label fw-bold">اجمالي المدين</label>
+                    <input type="text" class="form-control w-25">
+                    <label class="form-label fw-bold">اجمالي الدائن</label>
+                    <input type="text" class="form-control w-25">
+                    <label class="form-label fw-bold">الفرق</label>
+                    <input type="text" class="form-control w-25">    
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============ سند صرف نقدي ========== -->
+    <div class="cashBondContent position-absolute w-100 bg-light pb-5">
+        <div class="container">
+            <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
+            <h2 class="mt-5 mb-5 position-relative">صند صرف نقدي</h2>
+
+            <div class="invoice">
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">المستخدم</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">الرقم الالي</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-3"></div>
+                    <div class="col-md-5 mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">بناء علي</label>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">رقم الوثيقة</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label fw-bold">التاريخ</label>
+                        <span style="color: red;"> * </span>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-2 mb-3"></div>
+                    <div class="col-md-5 mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">العملة</label>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">رقم السند</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">دائن</label>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">الرصيد</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-3"></div>
+                    <div class="col-md-5 mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">مدين</label>
+                                <select class="w-100">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">الرصيد</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label fw-bold">مركز التكلفة</label>
+                        <span style="color: red;"> * </span>
+                        <select class="w-100">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 mb-3"></div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label fw-bold">المستفيد</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label fw-bold">ملاحظات</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-2 mb-3"></div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label fw-bold">معتمد</label>
+                        <span style="color: red;"> * </span>
+                        <br>
+                        <button class="btn fw-bold btn-primary w-25">نعم</button>
+                        <button class="btn fw-bold btn-secondary w-25">لا</button>
+                    </div>
+                </div>
+
+                <div class="btns mt-3 d-flex justify-content-end">
+                    <button class="btn fw-bold btn-primary">حفظ<i class="fa-solid fa-save"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
