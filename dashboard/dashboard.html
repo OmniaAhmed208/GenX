@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <div class="navbar-brand">
-                <a href="dashboard.html"><img src="../genx-img/genx.png" class="img-fluid" alt=""></a>
+                <a href="dashboard.html"><img src="imgs/genx.png" class="img-fluid" alt=""></a>
                 <span><i class="fa-solid fa-bars fa-fw"></i></span>
             </div>
 
@@ -52,7 +52,7 @@
                 <div class="person d-flex">
                     <p class="fw-bold px-3 pt-3">حسن شعبان</p>
                     <div class="imgBox">
-                        <img src="../genx-img/11111111.jpg" class="img-fluid" alt="">
+                        <img src="imgs/11111111.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                     <ul class="dropdown-menu">
                         <li><span class="dropdown-item" onclick="showData(salesInvoice)">فواتير المبيعات</span></li>
                         <li><span class="dropdown-item" onclick="showData(salesReports)">التقارير المفصلة للمبيعات</span></li>
-                        <li><span class="dropdown-item" onclick="showData()">التقارير المفصلة ارباح المبيعات وتكاليفها</span></li>
+                        <li><span class="dropdown-item">التقارير المفصلة ارباح المبيعات وتكاليفها</span></li>
                         <li><span class="dropdown-item" onclick="showData(salesPoints)">نقاط للبيع</span></li>
                     </ul>
                 </li>
@@ -120,14 +120,12 @@
                     <ul class="dropdown-menu">
                         <li><span class="dropdown-item" onclick="showData(dailyMoney)">القيود المالية اليومية</span></li>
                         <li><span class="dropdown-item" onclick="showData(cashBond)">سند صرف نقدي</span></li>
-                        <!-- <li><span class="dropdown-item" onclick="showData(automatedBound)">سند صرف ألي</span></li> -->
-                        <!-- <li><span class="dropdown-item" onclick="showData(banksBonds)">السندات البنكية</span></li> -->
                         <li><span class="dropdown-item" onclick="showData(trailBalance)">ميزان المراجعة</span></li>
                         <li><span class="dropdown-item" onclick="showData(balanceSheet)">الميزانية العمومية</span></li>
-                        <li><span class="dropdown-item" onclick="showData()">التقارير المالية</span></li>
+                        <li><span class="dropdown-item">التقارير المالية</span></li>
                     </ul>
                 </li>
-                <li class="mt-5">
+                <li class="mt-4">
                     <span class="d-flex align-items-center rounded-1 link">
                         <i class="fa-solid fa-gear fa-fw"></i>
                         <span>الاعدادات</span>
@@ -308,9 +306,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- =========== الملاك ========= -->
-                <div class="owners mt-5 visibiltyData">
+                <div class="owners mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / العملاء</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -360,7 +357,7 @@
                 </div><!--end owners-->
 
                 <!-- ========= المشتريات ============= -->
-                <div class="purchases mt-5 visibiltyData">
+                <div class="purchases mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المشتريات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -487,7 +484,7 @@
                 </div>
 
                 <!-- =========== امر الشراء ============= -->
-                <div class="purchaseOrder mt-5 visibiltyData">
+                <div class="purchaseOrder mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المشتريات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -602,7 +599,7 @@
                 </div>
 
                 <!-- ============ ادارة المشتريات ============ -->
-                <div class="managePurchase mt-5 visibiltyData">
+                <div class="managePurchase mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المشتريات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -728,7 +725,7 @@
                 </div>
 
                 <!-- ========= فاتورة الشراء ========== -->
-                <div class="invoicePurchase mt-5 visibiltyData">
+                <div class="invoicePurchase mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المشتريات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -792,7 +789,7 @@
                 </div>
 
                 <!-- ========= المخازن =========== -->
-                <div class="stores mt-5 visibiltyData">
+                <div class="stores mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المخازن</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -848,7 +845,7 @@
                 </div>
                 
                 <!-- ============ الاستلام والتسليم ========== -->
-                <div class="deliveryStores mt-5 visibiltyData">
+                <div class="deliveryStores mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المخازن</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -906,7 +903,7 @@
                 </div>
                 
                 <!-- ====== ضبط تكلفة الاصناف ============ -->
-                <div class="costsStores mt-5 visibiltyData">
+                <div class="costsStores mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المخازن</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -1021,7 +1018,7 @@
                 </div>
 
                 <!-- ============ الجرد الدوري للمخارن ============= -->
-                <div class="inventory mt-5 visibiltyData">
+                <div class="inventory mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المخازن</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -1071,7 +1068,7 @@
                 </div>
 
                 <!-- ============ فواتير المبيعات ========= -->
-                <div class="salesInvoice mt-5 visibiltyData">
+                <div class="salesInvoice mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المبيعات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -1135,7 +1132,7 @@
                 </div>
 
                 <!-- ============ نقاط البيع  ========= -->
-                <div class="salesPoints mt-5 visibiltyData">
+                <div class="salesPoints mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المبيعات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -1218,7 +1215,7 @@
                 </div>
 
                 <!--  التقارير المفصلة للمبيعات ========-->
-                <div class="salesReports mt-5 mb-5 visibiltyData">
+                <div class="salesReports mt-5 mb-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / المبيعات</h2>
                     <div class="details grayColor mb-4 pb-3 rounded">
                         <div class="title d-flex w-100 justify-content-center text-white p-2 fw-bold rounded">
@@ -1542,7 +1539,7 @@
                 </div> <!--end reports-->
 
                 <!-- =========== القيود المالية اليومية ========= -->
-                <div class="dailyMoney mt-5 visibiltyData">
+                <div class="dailyMoney mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / الحسابات</h2>
                     <div class="clients">
                         <div class="row mt-5 mb-5">
@@ -1606,7 +1603,7 @@
                 </div>
 
                 <!-- ============ صرف نقدي ======= -->
-                <div class="cashBond mt-5 visibiltyData">
+                <div class="cashBond mt-5 mb-5 visibiltyData visibleBox hasTable">
                     <h2 class="fs-4">الرئيسية / الحسابات / سند صرف نقدي</h2>
                     <div class="clients">
                         
@@ -1635,13 +1632,13 @@
 
                                 <div class="col-md-4">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">الالي من</label>
                                             <select class="w-100">
                                                 <option value="" selected></option>
                                             </select>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">الالي الي</label>
                                             <select class="w-100">
                                                 <option value="" selected></option>
@@ -1652,11 +1649,11 @@
 
                                 <div class="col-md-4">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">الرقم من</label>
                                             <input type="text" class="form-control">
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">الرقم الي</label>
                                             <input type="text" class="form-control">
                                         </div>
@@ -1665,14 +1662,14 @@
 
                                 <div class="col-md-4">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">من تاريخ</label>
                                             <span style="color: red;"> * </span>
                                             <select class="w-100">
                                                 <option value="" selected></option>
                                             </select>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">الي تاريخ</label>
                                             <span style="color: red;"> * </span>
                                             <input type="date" class="form-control">
@@ -1682,13 +1679,13 @@
 
                                 <div class="col-md-4">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">نوع العملية</label>
                                             <select class="w-100">
                                                 <option value="" selected></option>
                                             </select>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-md-6">
                                             <label class="form-label fw-bold">الحالة</label>
                                             <select class="w-100">
                                                 <option value="" selected></option>
@@ -1703,7 +1700,7 @@
                             <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">المستخدم/th>
+                                <th scope="col">المستخدم</th>
                                 <th scope="col">التاريخ</th>
                                 <th scope="col">رقم الوثيقة</th>
                                 <th scope="col">الرقم الالي</th>
@@ -1736,7 +1733,7 @@
                 </div>
 
                 <!-- ================ ميزان المراجعة ============ -->
-                <div class="trailBalance mt-5 visibiltyData">
+                <div class="trailBalance mt-5 mb-5 visibiltyData visibleBox">
                     <h2 class="fs-4 mb-4">الرئيسية / الحسابات / ميزان المراجعة</h2>
                     <div class="clients">
                         
@@ -1828,7 +1825,7 @@
                 </div>
 
                 <!-- ============== balanceSheet =========== -->
-                <div class="balanceSheet mt-5 visibiltyData">
+                <div class="balanceSheet mt-5 mb-5 visibiltyData visibleBox">
                     <h2 class="fs-4 mb-3">الرئيسية / الحسابات / الميزانية</h2>
                     <div class="clients">
                         
@@ -1879,13 +1876,13 @@
                             </div>
                         </div>
 
-                        <div class="totally mb-3">
+                        <div class="totally">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="rounded pt-3 pb-3 text-center text-white fw-bold blue">اجمالي الاصول</div>
+                                    <div class="rounded pt-3 pb-3 mb-3 text-center text-white fw-bold blue">اجمالي الاصول</div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="rounded pt-3 pb-3 text-center text-white fw-bold bink">اجمالي الخصوم</div>
+                                    <div class="rounded pt-3 pb-3 mb-3 text-center text-white fw-bold bink">اجمالي الخصوم</div>
                                 </div>
                             </div>
                         </div>
@@ -1934,7 +1931,7 @@
     </div>
 
     <!-- ========== new client ========== -->
-    <div class="clientContent position-absolute w-100 bg-light pb-5">
+    <div class="clientContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">بيانات العميل</h2>
@@ -2130,7 +2127,7 @@
     </div>
 
     <!-- ========== new purchases ========= -->
-    <div class="purchaseContent position-absolute w-100 bg-light pb-5">
+    <div class="purchaseContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">بيانات طلب الشراء</h2>
@@ -2183,7 +2180,7 @@
     </div>
 
     <!-- ========== purchaseOrder ========= -->
-    <div class="purchaseOrderContent position-absolute w-100 bg-light pb-5">
+    <div class="purchaseOrderContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">بيانات امر الشراء</h2>
@@ -2241,7 +2238,7 @@
     </div>
 
     <!-- ========== new bill ======== -->
-    <div class="invoiceContent position-absolute w-100 bg-light pb-5">
+    <div class="invoiceContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">بيانات الفاتورة</h2>
@@ -2258,7 +2255,7 @@
                             <div class="col-6">
                                 <label class="form-label fw-bold">العملة</label>
                                 <span style="color: red;"> * </span><br>
-                                <select class="month w-50">
+                                <select class="w-100">
                                     <option selected>EGP</option>
                                 </select>
                             </div>
@@ -2310,7 +2307,7 @@
     </div>
 
     <!-- ============ المخازن ========== -->
-    <div class="storesContent position-absolute w-100 bg-light pb-5">
+    <div class="storesContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">فئة الاصناف</h2>
@@ -2393,7 +2390,7 @@
     </div>
     
     <!-- ========= الاستلام والتسليم -->
-    <div class="deliveryStoresContent position-absolute w-100 bg-light pb-5">
+    <div class="deliveryStoresContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">سند استلام</h2>
@@ -2490,7 +2487,7 @@
     </div>
 
     <!-- ========== costsStores ======== -->
-    <div class="costsStoresContent position-absolute w-100 bg-light pb-5">
+    <div class="costsStoresContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">ضبط تكلفة الاصناف</h2>
@@ -2531,7 +2528,7 @@
     </div>
 
     <!-- ========== الجرد ======== -->
-    <div class="inventoryContent position-absolute w-100 bg-light pb-5">
+    <div class="inventoryContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">التسويات الجردية / تفاصيل الجرد</h2>
@@ -2562,7 +2559,7 @@
     </div>
 
     <!-- =========== فواتير المبيعات  ======= -->
-    <div class="salesInvoiceContent position-absolute w-100 bg-light pb-5">
+    <div class="salesInvoiceContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
 
@@ -2802,7 +2799,7 @@
     </div>
 
     <!-- ========== نقاط البيع ======== -->
-    <div class="salesPointsContent position-absolute w-100 bg-light pb-5">
+    <div class="salesPointsContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">بيانات الفاتورة</h2>
@@ -2900,7 +2897,7 @@
     </div>
 
     <!-- ========== القيود المالية اليومية ============ -->
-    <div class="dailyMoneyContent position-absolute w-100 bg-light pb-5">
+    <div class="dailyMoneyContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">قيد حاسبي</h2>
@@ -2908,7 +2905,7 @@
             <div class="invoice">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="grayColor pt-3 pb-3 rounded">
+                        <div class="grayColor pt-3 pb-3 mb-2 rounded">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -2936,7 +2933,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="grayColor pt-3 pb-3 rounded">
+                        <div class="grayColor pt-3 pb-3 mb-2 rounded">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -2988,7 +2985,7 @@
                     </tbody>
                 </table>
 
-                <div>
+                <div class="total">
                     <label class="form-label fw-bold">اجمالي المدين</label>
                     <input type="text" class="form-control w-25">
                     <label class="form-label fw-bold">اجمالي الدائن</label>
@@ -3006,7 +3003,7 @@
     </div>
 
     <!-- ============ سند صرف نقدي ========== -->
-    <div class="cashBondContent position-absolute w-100 bg-light pb-5">
+    <div class="cashBondContent position-absolute w-100 bg-light pb-5 contentBox">
         <div class="container">
             <span class="close position-absolute fs-2" onclick="closeContent(this)"><i class="fa-solid fa-close fa-fw"></i></span>
             <h2 class="mt-5 mb-5 position-relative">صند صرف نقدي</h2>
