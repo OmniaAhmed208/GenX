@@ -122,6 +122,18 @@ input[type='checkbox']{
 
 .main-content .box{box-shadow: 0 0 10px #ddd;margin-bottom:20px}
 
+.main-content .box .subscription {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+}
+    
+.main-content .box .subscription .div1 { grid-area: 1 / 1 / 2 / 2; }
+.main-content .box .subscription .div2 { grid-area: 1 / 2 / 2 / 3; }
+
 .main-content .visibleBox {display:none}
 
 .donut {
@@ -328,29 +340,27 @@ input[type='checkbox']{
 }
 .main-content .salesReports .details{background: #ddd;}
 
-.main-content .salesReports .reportsName{box-shadow: 0 0 10px #ddd;}
+/* .main-content .salesReports .reportsName{box-shadow: 0 0 10px #ddd;}
 .main-content .salesReports .reportsName .parent {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-}
+} */
     
-.main-content .salesReports .reportsName .parent .div1 { grid-area: 1 / 1 / 2 / 2; }
+/* .main-content .salesReports .reportsName .parent .div1 { grid-area: 1 / 1 / 2 / 2; }
 .main-content .salesReports .reportsName .parent .div2 { grid-area: 1 / 2 / 2 / 3; }
 .main-content .salesReports .reportsName .parent .div3 { grid-area: 1 / 3 / 2 / 4; }
 .main-content .salesReports .reportsName .parent .div4 { grid-area: 1 / 4 / 2 / 5; }
 .main-content .salesReports .reportsName .parent .div5 { grid-area: 1 / 5 / 2 / 6; }
 .main-content .salesReports .reportsName .parent .div6 { grid-area: 1 / 6 / 2 / 7; }
-.main-content .salesReports .reportsName .parent .div7 { grid-area: 1 / 7 / 2 / 8; }
+.main-content .salesReports .reportsName .parent .div7 { grid-area: 1 / 7 / 2 / 8; } */
 
-.main-content .salesReports .reportsName .parent div{
-    text-align: center;
-    padding: 10px 2px 0;
+.main-content .salesReports .reportsName .div{
     font-size: 14px;
-    font-weight: bold;
     cursor: pointer;
+    background-color: #fff;
 }
 .main-content .salesReports .reportsName .active{
     background: #626ff9; 

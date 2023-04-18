@@ -300,7 +300,7 @@ costsStoresBtn.forEach((btn,index)=>{
 
 //  =============== reports =======
 
-let reportNames = document.querySelectorAll('.salesReports .reportsName .parent div');
+let reportNames = document.querySelectorAll('.salesReports .reportsName .div');
 let reportTables = document.querySelectorAll('.salesReports .data');
 
 reportNames.forEach((item,index)=>{

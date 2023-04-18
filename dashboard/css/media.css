@@ -82,6 +82,9 @@
 
 
 @media (max-width:400px) {
+
+    .main-content .main-data .subscription h4 {font-size: 16px;}
+
     .storesContent .header1 {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
